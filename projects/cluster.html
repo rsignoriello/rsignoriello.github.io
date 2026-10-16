@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noai, noimageai">
+<title>Secure research computing · Ruggiero Signoriello, Ph.D.</title>
+<meta name="description" content="Research clusters secure by default, without slowing researchers down. On a 2026 contract I assessed and strengthened data-access security on a university HPC cluster used for CFD research. The client's systems stay confidential; this is the method I bring.">
+<meta property="og:title" content="Secure research computing · Ruggiero Signoriello, Ph.D.">
+<meta property="og:description" content="Research clusters secure by default, without slowing researchers down. On a 2026 contract I assessed and strengthened data-access security on a university HPC cluster used for CFD research. The client's systems stay confidential; this is the method I bring.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ruggiero.signoriello.dev/projects/cluster.html">
+<meta property="og:image" content="https://ruggiero.signoriello.dev/img/city.jpg">
+<link rel="canonical" href="https://ruggiero.signoriello.dev/projects/cluster.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231F4E79'/%3E%3Ctext x='32' y='42' font-family='Helvetica,Arial,sans-serif' font-size='28' font-weight='700' fill='white' text-anchor='middle'%3ERS%3C/text%3E%3C/svg%3E">
+<script>
+  // apply the saved theme before the page is drawn (no flash of the wrong theme)
+  try { var t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
+<link rel="preload" href="../fonts/IBMPlexSans-Regular-Latin1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="../">R. Signoriello, PhD</a>
+    <a href="../#work">Work</a>
+    <a href="../#capabilities">Capabilities</a>
+    <a href="../#journey">Journey</a>
+    <a href="../#talks">Talks</a>
+    <a href="../#contact">Contact</a>
+    <button class="theme-toggle" type="button" aria-label="Switch light/dark theme" title="Light / dark theme">
+      <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7a5 5 0 110 10 5 5 0 010-10zm0-5h0a1 1 0 011 1v2a1 1 0 01-2 0V3a1 1 0 011-1zm0 17a1 1 0 011 1v1a1 1 0 01-2 0v-1a1 1 0 011-1zM3 11h2a1 1 0 010 2H3a1 1 0 010-2zm16 0h2a1 1 0 010 2h-2a1 1 0 010-2zM5.6 4.2l1.4 1.4a1 1 0 01-1.4 1.4L4.2 5.6a1 1 0 011.4-1.4zm12.8 12.8l1.4 1.4a1 1 0 01-1.4 1.4l-1.4-1.4a1 1 0 011.4-1.4zM4.2 18.4l1.4-1.4a1 1 0 011.4 1.4l-1.4 1.4a1 1 0 01-1.4-1.4zM17 5.6l1.4-1.4a1 1 0 011.4 1.4L18.4 7A1 1 0 0117 5.6z"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- Same structure for every project page: impact first, then problem, what I did, result.
+     Order of the pages = newest first, as on the homepage (Newer / Older links at the bottom). -->
+<div class="case-head">
+  <div class="wrap">
+    <p class="crumb"><a href="../#work">← All work</a></p>
+    <p class="tagline">Contract · Politecnico di Milano · 2026</p>
+    <h1>Research clusters secure by default, without slowing researchers down</h1>
+    <p class="problem">On a 2026 contract I assessed and strengthened data-access security on a university HPC cluster used for CFD research. The client's systems stay confidential; this is the method I bring.</p>
+    <div class="numbers">
+      <div><b>IAM</b><span>central identity &amp; access</span></div>
+      <div><b>MFA</b><span>strong authentication</span></div>
+      <div><b>IaC</b><span>every change in Ansible</span></div>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap case">
+    <div>
+      <p class="label">The problem</p>
+      <p>
+        Shared research clusters grow over years: accounts, permissions and ways in pile up, and
+        security tends to compete with researchers who just need their jobs to run. Lock things down
+        without care and people find workarounds; leave them open and the data is exposed.
+      </p>
+      <p class="label">How I work</p>
+      <p>
+        <b>Assess.</b> Map who uses the cluster, which data they need, and every way in; rank each
+        risk by severity so effort goes where it matters.
+      </p>
+      <p>
+        <b>Harden.</b> Keep administration apart from user access, move identity to a central
+        LDAP directory with encrypted lookups (SSSD), enforce multi-factor authentication and one
+        password policy, and give project data least-privilege permissions.
+      </p>
+      <p>
+        <b>Keep it usable.</b> Offer a browser way in (Open OnDemand), so the
+        secure path is also the easy one.
+      </p>
+      <p>
+        <b>Codify.</b> Write every access setting as version-controlled Ansible, so any change is
+        tracked and any node can be rebuilt to a known, audited state.
+      </p>
+      <p>
+        <b>Document.</b> Hand over a technical report with findings, measures and residual risks,
+        plus operating procedures for users and administrators.
+      </p>
+      <p class="label">Result</p>
+      <p>
+        For the client: an assessment of where the risks were, the measures put in place, and the
+        procedures to keep the cluster secure after I leave. The details of their systems are confidential
+        under contract; I'm happy to walk through the method in a call.
+      </p>
+      <div class="tags"><span class="tag">RHEL</span><span class="tag">LDAP / SSSD</span><span class="tag">MFA</span><span class="tag">Open OnDemand</span><span class="tag">Ansible</span><span class="tag">Security assessment</span></div>
+    </div>
+    <div class="media">
+        <div class="diagram" role="img" aria-label="Method in five steps: assess, harden, keep it usable, codify, document">
+          <svg viewBox="0 0 460 300">
+            <rect class="box" x="10" y="8" width="440" height="46" rx="8"/>
+            <circle cx="38" cy="31" r="13" fill="var(--brand)"/><text class="t-on" x="38" y="36" text-anchor="middle">1</text>
+            <text x="64" y="36" style="font-weight:600">Assess</text>
+            <text class="t-mut" x="190" y="36">users, roles, data, entry points; risks ranked</text>
+            <path class="wire" d="M38 54 V66"/>
+            <rect class="box" x="10" y="66" width="440" height="46" rx="8"/>
+            <circle cx="38" cy="89" r="13" fill="var(--brand)"/><text class="t-on" x="38" y="94" text-anchor="middle">2</text>
+            <text x="64" y="94" style="font-weight:600">Harden</text>
+            <text class="t-mut" x="190" y="94">separate admin access, central identity, MFA</text>
+            <path class="wire" d="M38 112 V124"/>
+            <rect class="box" x="10" y="124" width="440" height="46" rx="8"/>
+            <circle cx="38" cy="147" r="13" fill="var(--brand)"/><text class="t-on" x="38" y="152" text-anchor="middle">3</text>
+            <text x="64" y="152" style="font-weight:600">Keep it usable</text>
+            <text class="t-mut" x="190" y="152">browser access via Open OnDemand</text>
+            <path class="wire" d="M38 170 V182"/>
+            <rect class="box" x="10" y="182" width="440" height="46" rx="8"/>
+            <circle cx="38" cy="205" r="13" fill="var(--brand)"/><text class="t-on" x="38" y="210" text-anchor="middle">4</text>
+            <text x="64" y="210" style="font-weight:600">Codify</text>
+            <text class="t-mut" x="190" y="210">every access setting in Ansible, versioned</text>
+            <path class="wire" d="M38 228 V240"/>
+            <rect class="box" x="10" y="240" width="440" height="46" rx="8"/>
+            <circle cx="38" cy="263" r="13" fill="var(--brand)"/><text class="t-on" x="38" y="268" text-anchor="middle">5</text>
+            <text x="64" y="268" style="font-weight:600">Document</text>
+            <text class="t-mut" x="190" y="268">report, residual risks, procedures</text>
+          </svg>
+        </div>
+    </div>
+  </div>
+</section>
+
+<section class="case-pager">
+  <div class="wrap case-next">
+    <a href="../#work">← All work</a>
+    <a href="wind.html">Older: Milan planners can see how wind moves through a district before redeveloping it →</a>
+  </div>
+</section>
+
+<footer>© 2026 Ruggiero Signoriello · Houston, Texas</footer>
+
+<script>
+  // light/dark toggle (no header bands on these pages); footnote marks open the Sources list
+  (function () {
+    var root = document.documentElement, mq = matchMedia("(prefers-color-scheme: dark)");
+    function isDark() { return root.dataset.theme ? root.dataset.theme === "dark" : mq.matches; }
+    document.querySelector(".theme-toggle").addEventListener("click", function () {
+      root.dataset.theme = isDark() ? "light" : "dark";
+      try { localStorage.setItem("theme", root.dataset.theme); } catch (e) {}
+    });
+    var list = document.getElementById("sources-list");
+    if (list) {
+      document.querySelectorAll('a[href^="#ref-"]').forEach(function (a) {
+        a.addEventListener("click", function () { list.open = true; });
+      });
+    }
+  })();
+</script>
+<script data-goatcounter="https://rsignoriello.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

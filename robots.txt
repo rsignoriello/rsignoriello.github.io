@@ -1,0 +1,13 @@
+# No AI model training on this site
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: Google-Extended
+User-agent: CCBot
+User-agent: Applebot-Extended
+User-agent: meta-externalagent
+User-agent: Bytespider
+Disallow: /
+
+# Search engines: allowed
+User-agent: *
+Allow: /

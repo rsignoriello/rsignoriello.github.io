@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noai, noimageai">
+<title>Point-cloud classification · Ruggiero Signoriello, Ph.D.</title>
+<meta name="description" content="Millions of LiDAR points labeled with machine learning, ready for city simulations. During six months at the Université libre de Bruxelles I built the point-cloud classifier now used in the Milan workflow, and extended it toward deep learning by fine-tuning the RandLA-Net network on GPU.">
+<meta property="og:title" content="Point-cloud classification · Ruggiero Signoriello, Ph.D.">
+<meta property="og:description" content="Millions of LiDAR points labeled with machine learning, ready for city simulations. During six months at the Université libre de Bruxelles I built the point-cloud classifier now used in the Milan workflow, and extended it toward deep learning by fine-tuning the RandLA-Net network on GPU.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ruggiero.signoriello.dev/projects/pointclouds.html">
+<meta property="og:image" content="https://ruggiero.signoriello.dev/img/lidar.jpg">
+<link rel="canonical" href="https://ruggiero.signoriello.dev/projects/pointclouds.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231F4E79'/%3E%3Ctext x='32' y='42' font-family='Helvetica,Arial,sans-serif' font-size='28' font-weight='700' fill='white' text-anchor='middle'%3ERS%3C/text%3E%3C/svg%3E">
+<script>
+  // apply the saved theme before the page is drawn (no flash of the wrong theme)
+  try { var t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
+<link rel="preload" href="../fonts/IBMPlexSans-Regular-Latin1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="../">R. Signoriello, PhD</a>
+    <a href="../#work">Work</a>
+    <a href="../#capabilities">Capabilities</a>
+    <a href="../#journey">Journey</a>
+    <a href="../#talks">Talks</a>
+    <a href="../#contact">Contact</a>
+    <button class="theme-toggle" type="button" aria-label="Switch light/dark theme" title="Light / dark theme">
+      <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7a5 5 0 110 10 5 5 0 010-10zm0-5h0a1 1 0 011 1v2a1 1 0 01-2 0V3a1 1 0 011-1zm0 17a1 1 0 011 1v1a1 1 0 01-2 0v-1a1 1 0 011-1zM3 11h2a1 1 0 010 2H3a1 1 0 010-2zm16 0h2a1 1 0 010 2h-2a1 1 0 010-2zM5.6 4.2l1.4 1.4a1 1 0 01-1.4 1.4L4.2 5.6a1 1 0 011.4-1.4zm12.8 12.8l1.4 1.4a1 1 0 01-1.4 1.4l-1.4-1.4a1 1 0 011.4-1.4zM4.2 18.4l1.4-1.4a1 1 0 011.4 1.4l-1.4 1.4a1 1 0 01-1.4-1.4zM17 5.6l1.4-1.4a1 1 0 011.4 1.4L18.4 7A1 1 0 0117 5.6z"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- Same structure for every project page: impact first, then problem, what I did, result.
+     Order of the pages = newest first, as on the homepage (Newer / Older links at the bottom). -->
+<div class="case-head">
+  <div class="wrap">
+    <p class="crumb"><a href="../#work">← All work</a></p>
+    <p class="tagline">Visiting research · Université libre de Bruxelles · 2024–25</p>
+    <h1>Millions of LiDAR points labeled with machine learning, ready for city simulations</h1>
+    <p class="problem">During six months at the Université libre de Bruxelles I built the point-cloud classifier now used in the Milan workflow, and extended it toward deep learning by fine-tuning the RandLA-Net network on GPU.</p>
+    <div class="numbers">
+      <div><b>2</b><span>LiDAR surveys (2022, 2024)</span></div>
+      <div><b>6</b><span>point classes</span></div>
+      <div><b>1,259</b><span>buildings reconstructed</span></div>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap case">
+    <div>
+      <p class="label">The problem</p>
+      <p>
+        Before a city can be simulated, every one of its millions of LiDAR points has to be labeled:
+        is it ground, a tree or a building? Doing that by hand doesn't scale.
+      </p>
+      <p class="label">What I built</p>
+      <p>
+        During six months in Brussels (Oct 2024 – Mar 2025) I built a semi-automatic Random Forest classifier
+        on geometric features (height, intensity, planarity, sphericity, PCA anisotropy), now used in the
+        Milan workflow, and extended it toward deep learning by fine-tuning the RandLA-Net network on my own labeled Milan data, on GPU.
+      </p>
+      <p class="label">Result</p>
+      <p>
+        The classified point clouds feed the geometry step of the City of Milan workflow, which rebuilds
+        1,259 buildings from the 2022 and 2024 surveys.
+      </p>
+      <div class="tags"><span class="tag">Python</span><span class="tag">Random Forest</span><span class="tag">RandLA-Net</span><span class="tag">3DMASC</span><span class="tag">CGAL</span><span class="tag">QGIS</span></div>
+    </div>
+    <div class="media">
+        <figure>
+          <img src="../img/lidar.jpg" alt="Classified LiDAR point cloud of La Goccia: vegetation in green, buildings in orange, ground in brown" loading="lazy">
+          <figcaption>Classified 2022 LiDAR survey: vegetation, buildings, ground</figcaption>
+        </figure>
+    </div>
+  </div>
+</section>
+
+<section class="case-pager">
+  <div class="wrap case-next">
+    <a href="cutmesh.html">← Newer: Any closed shape meshed automatically, from just an STL file and one point</a>
+    <a href="../#work">All work →</a>
+  </div>
+</section>
+
+<footer>© 2026 Ruggiero Signoriello · Houston, Texas</footer>
+
+<script>
+  // light/dark toggle (no header bands on these pages); footnote marks open the Sources list
+  (function () {
+    var root = document.documentElement, mq = matchMedia("(prefers-color-scheme: dark)");
+    function isDark() { return root.dataset.theme ? root.dataset.theme === "dark" : mq.matches; }
+    document.querySelector(".theme-toggle").addEventListener("click", function () {
+      root.dataset.theme = isDark() ? "light" : "dark";
+      try { localStorage.setItem("theme", root.dataset.theme); } catch (e) {}
+    });
+    var list = document.getElementById("sources-list");
+    if (list) {
+      document.querySelectorAll('a[href^="#ref-"]').forEach(function (a) {
+        a.addEventListener("click", function () { list.open = true; });
+      });
+    }
+  })();
+</script>
+<script data-goatcounter="https://rsignoriello.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
