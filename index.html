@@ -1,0 +1,680 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ruggiero Signoriello, Ph.D.</title>
+<meta name="description" content="Ruggiero Signoriello, Ph.D. – Computational Scientist in CFD and HPC. Portfolio: cut-cell meshing, LiDAR-to-CFD urban wind simulation, machine learning on point clouds, HPC cluster engineering.">
+<meta property="og:title" content="Ruggiero Signoriello, Ph.D.">
+<meta property="og:description" content="Computational Scientist – CFD & HPC. Simulation software for turbulent flows and heat transfer, and the HPC systems it runs on.">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://ruggiero.signoriello.dev/">
+<meta property="og:image" content="https://ruggiero.signoriello.dev/img/city.jpg">
+<link rel="canonical" href="https://ruggiero.signoriello.dev/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231F4E79'/%3E%3Ctext x='32' y='42' font-family='Helvetica,Arial,sans-serif' font-size='28' font-weight='700' fill='white' text-anchor='middle'%3ERS%3C/text%3E%3C/svg%3E">
+<style>
+  :root {
+    --accent: #1F4E79;
+    --accent-2: #2f7bbf;
+    --accent-soft: #e8eff6;
+    --text: #1d1d1f;
+    --muted: #5b6270;
+    --line: #dde2e8;
+    --bg: #ffffff;
+    --bg-alt: #f5f7fa;
+    --on-accent: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --accent: #7fb2e0;
+      --accent-2: #a9cdef;
+      --accent-soft: #17283a;
+      --text: #e8eaed;
+      --muted: #a2a9b4;
+      --line: #2c333d;
+      --bg: #111418;
+      --bg-alt: #171b21;
+      --on-accent: #0d1720;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--text);
+    background: var(--bg);
+  }
+  a { color: var(--accent); }
+  img { max-width: 100%; display: block; }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 20px; }
+
+  /* ---------- nav ---------- */
+  nav {
+    position: sticky; top: 0; z-index: 10;
+    background: color-mix(in srgb, var(--bg) 90%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav .wrap { display: flex; gap: 22px; align-items: center; height: 54px; }
+  nav a { color: var(--muted); text-decoration: none; font-size: 15px; white-space: nowrap; }
+  nav a:hover { color: var(--accent); }
+  nav .brand { color: var(--text); font-weight: 700; margin-right: auto; }
+
+  /* ---------- hero ---------- */
+  header {
+    position: relative; overflow: hidden;
+    padding: 84px 0 72px;
+    border-bottom: 1px solid var(--line);
+  }
+  header::before {            /* faint Cartesian grid: a nod to cut-cell meshing */
+    content: ""; position: absolute; inset: 0;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 36px 36px;
+    mask-image: radial-gradient(ellipse at 85% 30%, #000 0%, transparent 60%);
+    -webkit-mask-image: radial-gradient(ellipse at 85% 30%, #000 0%, transparent 60%);
+    opacity: .8;
+  }
+  .hero { position: relative; display: grid; grid-template-columns: 1fr 200px; gap: 48px; align-items: center; }
+  .kicker { color: var(--accent); font-weight: 600; font-size: 15px; letter-spacing: .04em; margin: 0 0 10px; }
+  h1 { font-size: clamp(32px, 5.4vw, 48px); line-height: 1.1; margin: 0 0 18px; }
+  .lead { font-size: 20px; color: var(--muted); max-width: 620px; margin: 0 0 22px; }
+  .lead strong { color: var(--text); font-weight: 600; }
+  .meta { color: var(--muted); font-size: 15px; margin: 0 0 28px; }
+  .avatar {
+    width: 200px; height: 200px; border-radius: 50%;
+    background: var(--accent); color: var(--on-accent);
+    display: grid; place-items: center;
+    font-size: 64px; font-weight: 700; letter-spacing: .02em;
+    box-shadow: 0 0 0 8px var(--accent-soft);
+    overflow: hidden;
+  }
+  .avatar img { width: 100%; height: 100%; object-fit: cover; }
+  .avatar img ~ span { display: none; }
+
+  .buttons { display: flex; flex-wrap: wrap; gap: 10px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 18px; border-radius: 8px; font-size: 15px; font-weight: 600;
+    text-decoration: none; border: 1px solid var(--accent); color: var(--accent);
+    background: var(--bg);
+  }
+  .btn.primary { background: var(--accent); color: var(--on-accent); }
+  .btn:hover { filter: brightness(1.1); }
+  .btn svg { width: 17px; height: 17px; fill: currentColor; }
+
+  /* ---------- sections ---------- */
+  section { padding: 72px 0; border-bottom: 1px solid var(--line); }
+  section.alt { background: var(--bg-alt); }
+  h2 {
+    font-size: 14px; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--accent); margin: 0 0 10px;
+  }
+  .section-title { font-size: clamp(24px, 3.6vw, 32px); line-height: 1.2; margin: 0 0 34px; }
+  h3 { font-size: 20px; margin: 0; line-height: 1.3; }
+  p { margin: 0 0 16px; }
+
+  /* about */
+  .about { display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; }
+  .about p:last-child { margin-bottom: 0; }
+  .facts { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+  .facts li { display: grid; grid-template-columns: 34px 1fr; gap: 10px; align-items: start; font-size: 15px; }
+  .facts .ico {
+    width: 34px; height: 34px; border-radius: 8px;
+    background: var(--accent-soft); color: var(--accent);
+    display: grid; place-items: center; font-size: 17px;
+  }
+  .facts b { display: block; font-size: 15px; }
+  .facts span { color: var(--muted); }
+
+  /* projects */
+  .project { display: grid; grid-template-columns: 1.15fr 1fr; gap: 40px; align-items: start; margin-bottom: 80px; }
+  .project:last-child { margin-bottom: 0; }
+  .project.flip > .media { order: 2; }
+  .media { display: grid; gap: 12px; }
+  .media figure {
+    margin: 0; background: #fff; border: 1px solid var(--line); border-radius: 12px; overflow: hidden;
+  }
+  .media figure img { width: 100%; height: auto; }
+  .media figcaption { font-size: 13px; color: #5b6270; padding: 8px 12px; border-top: 1px solid #e6e9ee; background: #fff; }
+  .media .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .media .pair img { aspect-ratio: 1 / 1; object-fit: contain; }
+  .media img.contain { max-height: 300px; width: auto; margin: 0 auto; }
+  .tagline { color: var(--accent); font-weight: 600; font-size: 14px; letter-spacing: .04em; text-transform: uppercase; margin: 0 0 6px; }
+  .project h3 { font-size: 24px; margin-bottom: 12px; }
+  .label { font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 18px 0 4px; }
+  .project p { color: var(--text); }
+  .numbers { display: flex; flex-wrap: wrap; gap: 24px; margin: 20px 0; }
+  .numbers div { line-height: 1.2; }
+  .numbers b { display: block; font-size: 26px; color: var(--accent); }
+  .numbers span { font-size: 13px; color: var(--muted); }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag { background: var(--accent-soft); color: var(--accent); border-radius: 999px; padding: 3px 12px; font-size: 13px; font-weight: 500; }
+
+  .diagram {
+    background: var(--bg); border: 1px solid var(--line); border-radius: 12px; padding: 24px;
+  }
+  .diagram svg { width: 100%; height: auto; display: block; }
+  .diagram .box { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 1.5; }
+  .diagram .box.strong { fill: var(--accent); }
+  .diagram text { font-family: inherit; font-size: 13px; fill: var(--text); }
+  .diagram .t-on { fill: var(--on-accent); font-weight: 600; }
+  .diagram .t-mut { fill: var(--muted); font-size: 11px; }
+  .diagram .wire { stroke: var(--muted); stroke-width: 1.5; fill: none; }
+
+  /* research intro + notes */
+  .intro { max-width: 760px; color: var(--muted); margin: -14px 0 22px; }
+  .intro strong { color: var(--text); font-weight: 600; }
+  .note {
+    border-left: 3px solid var(--accent); background: var(--accent-soft);
+    padding: 10px 14px; border-radius: 0 8px 8px 0; font-size: 15px; margin: 0 0 16px;
+  }
+  .note b { color: var(--accent); }
+  .credit { font-size: 14px; color: var(--muted); margin: 16px 0 0; }
+  .intro sup a { text-decoration: none; font-weight: 600; }
+  .cite a { text-decoration: none; font-weight: 600; margin-left: 1px; }
+  .sources { padding: 40px 0; }
+  .sources h2 { margin-bottom: 14px; }
+  .sources ol { margin: 0; padding-left: 20px; font-size: 13px; color: var(--muted); }
+  .sources li { margin-bottom: 6px; }
+  .par { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 0 0 14px; }
+  .par > div { background: var(--bg-alt); border: 1px solid var(--line); border-top: 3px solid var(--accent); border-radius: 10px; padding: 16px 18px; }
+  .par b { color: var(--accent); font-size: 13px; text-transform: uppercase; letter-spacing: .08em; }
+  .par p { margin: 6px 0 0; font-size: 15px; }
+  .par sup a { text-decoration: none; font-weight: 600; }
+  @media (max-width: 820px) { .par { grid-template-columns: 1fr; } }
+
+  /* timeline */
+  .timeline { position: relative; padding-left: 28px; }
+  .timeline::before { content: ""; position: absolute; left: 6px; top: 6px; bottom: 6px; width: 2px; background: var(--line); }
+  .step { position: relative; margin-bottom: 30px; }
+  .step:last-child { margin-bottom: 0; }
+  .step::before {
+    content: ""; position: absolute; left: -28px; top: 6px; width: 14px; height: 14px; border-radius: 50%;
+    background: var(--bg); border: 3px solid var(--accent);
+  }
+  .step.edu::before { border-color: var(--muted); }
+  .step .when { color: var(--muted); font-size: 14px; }
+  .step h3 { font-size: 18px; }
+  .step .where { color: var(--muted); font-size: 15px; margin: 0 0 6px; }
+  .step p { margin: 0; font-size: 15px; }
+
+  .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
+  .skills h3 { font-size: 15px; color: var(--muted); font-weight: 600; margin-bottom: 10px; }
+
+  /* contact */
+  .contact { text-align: center; }
+  .contact .section-title { margin-bottom: 14px; }
+  .contact p { color: var(--muted); max-width: 560px; margin: 0 auto 28px; }
+  .contact .buttons { justify-content: center; }
+
+  footer { padding: 32px 0 44px; color: var(--muted); font-size: 14px; text-align: center; }
+
+  @media (max-width: 820px) {
+    .hero { grid-template-columns: 1fr; gap: 28px; }
+    .avatar { width: 120px; height: 120px; font-size: 40px; order: -1; }
+    .about, .project { grid-template-columns: 1fr; gap: 28px; }
+    .project.flip > .media { order: 0; }
+    .project { margin-bottom: 64px; }
+  }
+  @media (max-width: 560px) {
+    body { font-size: 16px; }
+    header { padding: 48px 0 48px; }
+    .lead { font-size: 18px; }
+    section { padding: 56px 0; }
+    nav a:not(.brand):nth-child(n+4) { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">R. Signoriello</a>
+    <a href="#projects">Projects</a>
+    <a href="#about">About</a>
+    <a href="#journey">Journey</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<header id="top">
+  <div class="wrap hero">
+    <div>
+      <p class="kicker">Computational Scientist · CFD &amp; HPC</p>
+      <h1>Hi, I'm Ruggiero.</h1>
+      <p class="lead">
+        I build simulation software for <strong>turbulent flows and heat transfer</strong>:
+        I write the <strong>meshing code</strong>, run the <strong>simulations</strong> in parallel,
+        check them against <strong>real measurements</strong>, and keep the
+        <strong>HPC clusters</strong> they run on secure and easy to use.
+      </p>
+      <p class="meta">Ph.D., Politecnico di Milano · Based in Houston, Texas · Authorized to work in the U.S.</p>
+      <div class="buttons">
+        <a class="btn primary" data-goatcounter-click="hero-see-work" href="#projects">See my work</a>
+        <a class="btn" data-goatcounter-click="resume-download-hero" href="https://1drv.ms/b/c/a7333cfdc3301dc4/IQCNgrMZ49RrT6H_mQchV1GuAZQQ3a2IoS6JshKPGSijpZ8?e=QP8Ya2" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h9l5 5v15H6V2zm8 1.5V8h4.5L14 3.5zM8 12h10v1.5H8V12zm0 3h10v1.5H8V15zm0 3h7v1.5H8V18z"/></svg>
+          Resume
+        </a>
+        <a class="btn" data-goatcounter-click="linkedin-hero" href="https://www.linkedin.com/in/rsignoriello" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 11-.01 5 2.5 2.5 0 01.01-5zM3 9h4v12H3V9zm7 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.5c0-1.3-.02-3-1.83-3-1.83 0-2.1 1.43-2.1 2.9V21h-4V9z"/></svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+    <!-- Photo: save a square headshot as img/photo.jpg and it replaces the initials automatically -->
+    <div class="avatar" aria-label="Ruggiero Signoriello">
+      <img src="img/photo.jpg" alt="Ruggiero Signoriello" onerror="this.remove()">
+      <span>RS</span>
+    </div>
+  </div>
+</header>
+
+<!-- ======================= PROJECTS ======================= -->
+<section id="projects">
+  <div class="wrap">
+    <h2>Projects</h2>
+    <p class="section-title">Selected work</p>
+    <p class="intro">
+      One Ph.D. at Politecnico di Milano (2022–2026), on two levels: a general meshing <strong>method</strong>
+      and a real-world <strong>application</strong> in energy and the urban environment.
+    </p>
+    <div class="par" style="margin-bottom:56px">
+      <div><b>Problem</b>
+        <p>Building the mesh around a complex geometry is slow and largely manual: NASA's CFD Vision 2030
+        study names it one of the main bottlenecks of the CFD workflow.<sup><a href="#ref-1" id="cite-1">1</a></sup></p></div>
+      <div><b>Approach</b>
+        <p><strong>Method:</strong> cutMesh, an automated cut-cell mesh library.
+        <strong>Application:</strong> a workflow from raw LiDAR scans of a Milan district to wind and
+        thermal-comfort CFD.</p></div>
+      <div><b>Result</b>
+        <p>cutMesh tested on 9 benchmark geometries and a standard OpenFOAM case; the city simulation
+        matches the measured mean wind speed within about 5%.</p></div>
+    </div>
+
+    <!-- Project 1 -->
+    <article class="project flip">
+      <div class="media">
+        <figure>
+          <img src="img/cutmesh.jpg" alt="Cut-cell meshes generated by cutMesh around classic 3D test models: a dragon, a bunny, a statue and a cone" loading="lazy">
+          <figcaption>cutMesh on standard 3D test models from the Stanford 3D Scanning Repository<sup class="cite"><a href="#ref-3">3</a></sup></figcaption>
+        </figure>
+        <figure>
+          <img class="contain" src="img/motorbike.jpg" alt="Cut cells around the OpenFOAM motorbike geometry" loading="lazy">
+          <figcaption>Cut cells (yellow) around the standard OpenFOAM motorbike case</figcaption>
+        </figure>
+      </div>
+      <div>
+        <p class="tagline">The method · Research software in C++</p>
+        <h3>cutMesh: meshing any shape on a Cartesian grid</h3>
+        <p>
+          Cartesian grids are the fastest meshes to build and the simplest to solve on, but they don't fit
+          complex shapes, so most tools fall back on slow, hand-tuned body-fitted meshing. Cut-cell methods fix that by slicing the cells that
+          touch the surface into exact polyhedra.
+        </p>
+        <p class="label">What I built</p>
+        <p>
+          A polyhedral cut-cell meshing library written from scratch. It needs only a closed STL surface
+          and one point in the fluid. It handles multiple cuts per cell, multiple objects and non-manifold
+          geometry, and processes each cell independently so the work can be distributed.
+        </p>
+        <p class="label">Result</p>
+        <p>
+          Benchmarked on 9 reference geometries, from a simple 118-triangle cone to a detailed
+          1.1M-triangle 3D scan. I fitted a power-law runtime model and identified surface trimming as the main
+          cost driver, then tested the meshes end to end in OpenFOAM on its standard motorbike case.
+        </p>
+        <p class="label">Scope</p>
+        <p>
+          The input surface must be closed (watertight), and the grid must be fine enough that no surface
+          feature passes through a cell unresolved. Within those limits the cuts follow the STL surface exactly.
+        </p>
+        <p class="note">
+          <b>Presented</b> at the 20th OpenFOAM Workshop, Vienna, July 2025: <em>“Polyhedral Cell Decomposition
+          Applied on Structured Cartesian Grids for Fluid Dynamics”</em> (R. Signoriello, R. Mereu, F. Piscaglia).
+          The code is not public yet; I'm happy to walk through the algorithm and the benchmarks in a call.
+        </p>
+        <div class="numbers">
+          <div><b>9</b><span>benchmark geometries</span></div>
+          <div><b>1.1M</b><span>surface triangles max</span></div>
+          <div><b>2</b><span>inputs: STL + one point</span></div>
+        </div>
+        <div class="tags">
+          <span class="tag">C++</span><span class="tag">Computational geometry</span><span class="tag">Cut-cell methods</span>
+          <span class="tag">OpenFOAM</span><span class="tag">Performance profiling</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Project 2 -->
+    <article class="project">
+      <div class="media">
+        <figure>
+          <img src="img/city.jpg" alt="3D urban model of La Goccia park in Milan with ground, trees and buildings reconstructed from LiDAR" loading="lazy">
+          <figcaption>La Goccia, Milan: ground, tree canopies and buildings reconstructed from LiDAR</figcaption>
+        </figure>
+        <figure>
+          <img src="img/wind.jpg" alt="Wind speed fields around buildings: top, front and side views, with and without the mesh" loading="lazy">
+          <figcaption>Wind speed at the anemometer plane: top, front and side views, with the mesh below</figcaption>
+        </figure>
+        <figure>
+          <img src="img/mesh.jpg" alt="Cylindrical computational domain of the Milan district with buildings on the ground" loading="lazy">
+          <figcaption>Computational domain: 2.28 km radius, 570 m high, wind from 240°</figcaption>
+        </figure>
+      </div>
+      <div>
+        <p class="tagline">The application · Project for the City of Milan</p>
+        <h3>From LiDAR to wind: simulating a city district</h3>
+        <p>
+          La Goccia is a 0.46 km² urban woodland in north Milan, next to the Politecnico campus and
+          about to be redeveloped. Planners wanted to know how wind moves through it today, but
+          turning a real neighborhood into a simulation-ready model is usually slow, manual work.
+        </p>
+        <p class="label">What I built</p>
+        <p>
+          An end-to-end workflow, designed and run by me from raw data to the final simulation. LiDAR point
+          clouds from 2022 and 2024 are cleaned and classified into ground, vegetation and buildings with a model
+          trained on my own data; open-source tools then rebuild a watertight 3D model of 1,259 buildings,
+          156 of them at high detail. The model is meshed and simulated in OpenFOAM (steady RANS, k–ε) with an
+          atmospheric boundary layer derived from Linate airport wind data. cutMesh was developed and tested
+          separately; integrating it into this workflow is ongoing.
+        </p>
+        <p class="label">Result</p>
+        <p>
+          Compared with 740 ten-minute samples from an on-site anemometer at 48 m (Jan 2024 – Aug 2025),
+          the simulated mean wind speed is about 5% below the measured one: 1.60 vs. 1.69 m/s, a bias of −0.09 m/s.
+          The workflow was then extended to a multi-region RANS thermal-comfort analysis of the district.
+        </p>
+        <p class="note">
+          The RMSE of 1.26 m/s reflects gust-to-gust variability: a steady RANS model predicts the mean
+          flow, not the fluctuations, which would require unsteady approaches such as URANS or LES.
+        </p>
+        <div class="numbers">
+          <div><b>38.8M</b><span>mesh cells</span></div>
+          <div><b>80</b><span>CPU cores (MPI)</span></div>
+          <div><b>−0.09 m/s</b><span>bias on mean wind speed</span></div>
+        </div>
+        <div class="tags">
+          <span class="tag">OpenFOAM</span><span class="tag">RANS k–ε</span>
+          <span class="tag">CloudCompare</span><span class="tag">MPI</span><span class="tag">ParaView</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Project 3 -->
+    <article class="project flip">
+      <div class="media">
+        <figure>
+          <img src="img/lidar.jpg" alt="Classified LiDAR point cloud of La Goccia: vegetation in green, buildings in orange, ground in brown" loading="lazy">
+          <figcaption>Classified 2022 LiDAR survey: vegetation, buildings, ground</figcaption>
+        </figure>
+      </div>
+      <div>
+        <p class="tagline">Visiting research · Université libre de Bruxelles</p>
+        <h3>Teaching a model to read point clouds</h3>
+        <p>
+          Before a city can be simulated, every one of its millions of LiDAR points has to be labeled:
+          is it ground, a tree or a building? Doing that by hand doesn't scale.
+        </p>
+        <p class="label">What I built</p>
+        <p>
+          During six months in Brussels (Oct 2024 – Mar 2025) I built a semi-automatic Random Forest classifier
+          on geometric features (height, intensity, planarity, sphericity, PCA anisotropy), now used in the
+          Milan workflow, and started fine-tuning the RandLA-Net deep network on my own labeled Milan data, on GPU.
+        </p>
+        <p class="note">
+          <b>In progress.</b> I'm re-running the RandLA-Net evaluation with a train/test split that removes
+          the bias between tall and low buildings, so the accuracy reflects truly unseen areas.
+        </p>
+        <div class="numbers">
+          <div><b>2</b><span>LiDAR surveys (2022, 2024)</span></div>
+          <div><b>6</b><span>point classes</span></div>
+          <div><b>1,259</b><span>buildings reconstructed</span></div>
+        </div>
+        <div class="tags">
+          <span class="tag">Python</span><span class="tag">Random Forest</span><span class="tag">RandLA-Net</span>
+          <span class="tag">3DMASC</span><span class="tag">CGAL</span><span class="tag">QGIS</span>
+        </div>
+        <p class="credit">The classified point clouds feed the geometry step of the city-of-Milan workflow above.</p>
+      </div>
+    </article>
+
+    <!-- Project 4 -->
+    <article class="project">
+      <div class="media">
+        <div class="diagram" role="img" aria-label="Cluster access architecture: researchers log in through Open OnDemand with single sign-on or SSH with two-factor authentication, an isolated admin node, LDAP directory and Ansible-managed compute nodes">
+          <svg viewBox="0 0 460 300">
+            <rect class="box" x="10" y="20" width="130" height="44" rx="8"/>
+            <text x="75" y="47" text-anchor="middle">Researchers</text>
+            <rect class="box" x="170" y="10" width="130" height="30" rx="6"/>
+            <text x="235" y="30" text-anchor="middle">Open OnDemand</text>
+            <rect class="box" x="170" y="46" width="130" height="30" rx="6"/>
+            <text x="235" y="66" text-anchor="middle">SSH + 2FA</text>
+            <path class="wire" d="M140 42 H170 M155 42 V25 H170 M155 42 V61 H170"/>
+            <text class="t-mut" x="235" y="92" text-anchor="middle">OIDC single sign-on</text>
+
+            <rect class="box strong" x="320" y="18" width="130" height="50" rx="8"/>
+            <text class="t-on" x="385" y="40" text-anchor="middle">Login node</text>
+            <text class="t-on" x="385" y="56" text-anchor="middle" style="font-weight:400;font-size:11px">SSSD</text>
+            <path class="wire" d="M300 25 H310 V43 H320 M300 61 H310 V43"/>
+
+            <rect class="box" x="320" y="120" width="130" height="44" rx="8"/>
+            <text x="385" y="140" text-anchor="middle">389-DS LDAP</text>
+            <text class="t-mut" x="385" y="155" text-anchor="middle">800+ accounts</text>
+            <path class="wire" d="M385 68 V120"/>
+
+            <rect class="box" x="10" y="120" width="160" height="44" rx="8"/>
+            <text x="90" y="140" text-anchor="middle">Admin node</text>
+            <text class="t-mut" x="90" y="155" text-anchor="middle">isolated, key-only</text>
+
+            <rect class="box" x="170" y="220" width="280" height="56" rx="8"/>
+            <text x="310" y="244" text-anchor="middle">Compute nodes</text>
+            <text class="t-mut" x="310" y="262" text-anchor="middle">MPI · Apptainer</text>
+            <path class="wire" d="M385 164 V220"/>
+
+            <rect class="box" x="10" y="220" width="130" height="56" rx="8"/>
+            <text x="75" y="244" text-anchor="middle">Ansible</text>
+            <text class="t-mut" x="75" y="262" text-anchor="middle">versioned config</text>
+            <path class="wire" d="M90 164 V220 M140 248 H170"/>
+          </svg>
+        </div>
+      </div>
+      <div>
+        <p class="tagline">Current role · Politecnico di Milano</p>
+        <h3>Modernizing a research HPC cluster</h3>
+        <p>
+          A university cluster shared by hundreds of researchers still relied on NIS, a legacy
+          protocol that sends identity data unencrypted, and on terminal-only access.
+        </p>
+        <p class="label">What I did</p>
+        <p>
+          Migrated all user accounts to a 389-DS LDAP directory with SSSD on every node. Moved admin
+          services to an isolated, key-only node and enforced two-factor authentication. Deployed
+          Open OnDemand with single sign-on, so researchers can use the cluster from a web browser. Every
+          access setting lives in Ansible playbooks, so any node can be rebuilt to a known, audited state.
+        </p>
+        <div class="numbers">
+          <div><b>800+</b><span>accounts migrated</span></div>
+          <div><b>2FA</b><span>on external access</span></div>
+          <div><b>100%</b><span>access config in Ansible</span></div>
+        </div>
+        <div class="tags">
+          <span class="tag">RHEL</span><span class="tag">LDAP / SSSD</span><span class="tag">Ansible</span>
+          <span class="tag">Open OnDemand</span><span class="tag">OIDC</span><span class="tag">Security</span>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ======================= ABOUT ======================= -->
+<section id="about" class="alt">
+  <div class="wrap">
+    <h2>About me</h2>
+    <p class="section-title">From aircraft to cities, and beyond</p>
+    <div class="about">
+      <div>
+        <p>
+          I'm Italian and studied aerospace engineering at Politecnico di Milano, from my bachelor's
+          to my Ph.D. in Energy and Aeronautical Sciences. Aircraft taught me the fundamentals:
+          fluid dynamics, numerical methods and a healthy respect for validation.
+        </p>
+        <p>
+          During my Ph.D. I applied those tools to the ground: the wind, heat and comfort of real
+          urban districts. That meant building whatever was missing along the way: a meshing library,
+          a machine-learning pipeline for LiDAR, and the know-how to run large simulations on a cluster.
+          Eventually I started running clusters myself.
+        </p>
+        <p>
+          The toolkit is not specific to cities: turbulence modeling, heat transfer, meshing of complex
+          geometry, validation against measurements and parallel computing are exactly what energy,
+          aerospace and process engineering rely on. That's where I want to apply it next.
+        </p>
+        <p>
+          Today I live in Houston and work across English, Portuguese and Italian.
+        </p>
+      </div>
+      <ul class="facts">
+        <li><span class="ico">🎓</span><div><b>Ph.D. in Energy &amp; Aeronautical Sciences, 2026</b><span>Politecnico di Milano: Italy's largest technical university, 14th in the world for Mechanical, Aeronautical &amp; Manufacturing Engineering (QS 2026)<sup class="cite"><a href="#ref-2">2</a></sup></span></div></li>
+        <li><span class="ico">✈️</span><div><b>M.Sc. Aeronautical · B.Sc. Aerospace</b><span>Politecnico di Milano, 2022 · 2018</span></div></li>
+        <li><span class="ico">🇧🇪</span><div><b>Visiting Researcher</b><span>Université libre de Bruxelles, 2024–25</span></div></li>
+        <li><span class="ico">📍</span><div><b>Houston, Texas</b><span>Authorized to work in the U.S.</span></div></li>
+        <li><span class="ico">💬</span><div><b>Italian · English · Portuguese</b><span>native · fluent · fluent</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= JOURNEY ======================= -->
+<section id="journey" class="alt">
+  <div class="wrap">
+    <h2>Journey</h2>
+    <p class="section-title">Experience &amp; education</p>
+    <div class="timeline">
+      <div class="step">
+        <div class="when">Jul 2026 – Present</div>
+        <h3>HPC Systems Administrator (Contract)</h3>
+        <p class="where">Politecnico di Milano · Remote</p>
+        <p>Identity management, access security and web access for a shared research cluster.</p>
+      </div>
+      <div class="step">
+        <div class="when">Nov 2022 – Sep 2026</div>
+        <h3>Doctoral Researcher</h3>
+        <p class="where">Politecnico di Milano · Milan, Italy</p>
+        <p>LiDAR-to-CFD workflow, the cutMesh meshing library, and urban wind and thermal-comfort simulations compared with field measurements.</p>
+      </div>
+      <div class="step">
+        <div class="when">Jul 2025</div>
+        <h3>Oral presentation, 20th OpenFOAM Workshop</h3>
+        <p class="where">Vienna, Austria</p>
+        <p>“Polyhedral Cell Decomposition Applied on Structured Cartesian Grids for Fluid Dynamics”.</p>
+      </div>
+      <div class="step">
+        <div class="when">Oct 2024 – Mar 2025</div>
+        <h3>Visiting Researcher</h3>
+        <p class="where">Université libre de Bruxelles · Brussels, Belgium</p>
+        <p>Machine learning for LiDAR point-cloud segmentation.</p>
+      </div>
+      <div class="step">
+        <div class="when">Oct 2020 – Jun 2021</div>
+        <h3>Teacher</h3>
+        <p class="where">Francesco Baracca Aeronautical Technical Institute · Pavia, Italy</p>
+        <p>Mechanics, Physics and Electrical Technology for 3 classes.</p>
+      </div>
+      <div class="step edu">
+        <div class="when">Education</div>
+        <h3>Ph.D. Energy &amp; Aeronautical Sciences (2026) · M.Sc. Aeronautical Eng. (2022) · B.Sc. Aerospace Eng. (2018)</h3>
+        <p class="where">Politecnico di Milano · 14th in the world for Mechanical, Aeronautical &amp; Manufacturing Engineering (QS 2026)<sup class="cite"><a href="#ref-2">2</a></sup></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= SKILLS ======================= -->
+<section id="skills">
+  <div class="wrap">
+    <h2>Toolbox</h2>
+    <p class="section-title">What I work with</p>
+    <div class="skills">
+      <div>
+        <h3>CFD &amp; numerics</h3>
+        <div class="tags">
+          <span class="tag">OpenFOAM</span><span class="tag">ANSYS Fluent</span><span class="tag">RANS</span>
+          <span class="tag">Cut-cell / IBM</span><span class="tag">snappyHexMesh</span><span class="tag">Finite volume</span><span class="tag">ParaView</span>
+        </div>
+      </div>
+      <div>
+        <h3>Programming</h3>
+        <div class="tags">
+          <span class="tag">C++</span><span class="tag">Python</span><span class="tag">MPI</span>
+          <span class="tag">Fortran</span><span class="tag">Bash</span><span class="tag">MATLAB / Octave</span><span class="tag">Git</span>
+        </div>
+      </div>
+      <div>
+        <h3>HPC &amp; Linux</h3>
+        <div class="tags">
+          <span class="tag">RHEL</span><span class="tag">Ansible</span><span class="tag">LDAP / SSSD</span>
+          <span class="tag">Open OnDemand</span><span class="tag">Apptainer</span><span class="tag">Docker</span>
+        </div>
+      </div>
+      <div>
+        <h3>Data &amp; ML</h3>
+        <div class="tags">
+          <span class="tag">NumPy / SciPy / Pandas</span><span class="tag">Random Forest</span><span class="tag">RandLA-Net</span>
+          <span class="tag">CloudCompare</span><span class="tag">QGIS</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CONTACT ======================= -->
+<section id="contact" class="alt contact">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <p class="section-title">Let's talk</p>
+    <p>
+      I'm looking for Computational Scientist, CFD Engineer and HPC Engineer roles.
+      If you're working on simulation, scientific software or research computing, I'd be glad to hear from you.
+    </p>
+    <div class="buttons">
+      <a class="btn primary" data-goatcounter-click="email" href="mailto:rsignoriello@outlook.com">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v14H3V5zm9 7.5L5 7.3V17h14V7.3l-7 5.2zM5.9 7l6.1 4.5L18.1 7H5.9z"/></svg>
+        rsignoriello@outlook.com
+      </a>
+      <a class="btn" data-goatcounter-click="book-call" href="https://cal.com/rsignoriello" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h2v2h6V2h2v2h3v18H4V4h3V2zm11 8H6v10h12V10z"/></svg>
+        Book a call
+      </a>
+      <a class="btn" data-goatcounter-click="linkedin-contact" href="https://www.linkedin.com/in/rsignoriello" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" data-goatcounter-click="github" href="https://github.com/rsignoriello" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" data-goatcounter-click="resume-download-contact" href="https://1drv.ms/b/c/a7333cfdc3301dc4/IQCNgrMZ49RrT6H_mQchV1GuAZQQ3a2IoS6JshKPGSijpZ8?e=QP8Ya2" target="_blank" rel="noopener">Resume (PDF)</a>
+    </div>
+  </div>
+</section>
+
+<section id="sources" class="sources">
+  <div class="wrap">
+    <h2>Sources</h2>
+    <ol>
+      <li id="ref-1">J. P. Slotnick, A. Khodadoust, J. Alonso, D. Darmofal, W. Gropp, E. Lurie, D. Mavriplis,
+        <a href="https://ntrs.nasa.gov/citations/20140003093" target="_blank" rel="noopener"><em>CFD Vision 2030 Study: A Path to Revolutionary Computational Aerosciences</em></a>,
+        NASA/CR-2014-218178, 2014. <a href="#cite-1" aria-label="Back to text">↩</a></li>
+      <li id="ref-2">Politecnico di Milano,
+        <a href="https://www.dig.polimi.it/en/magazine/qs-world-university-rankings-by-subject-polimi-among-the-worlds-top-universities" target="_blank" rel="noopener"><em>QS World University Rankings by Subject 2026</em></a>.</li>
+      <li id="ref-3">Stanford Computer Graphics Laboratory,
+        <a href="https://graphics.stanford.edu/data/3Dscanrep/" target="_blank" rel="noopener"><em>The Stanford 3D Scanning Repository</em></a>.</li>
+    </ol>
+  </div>
+</section>
+
+<footer>© 2026 Ruggiero Signoriello · Houston, Texas</footer>
+
+<script data-goatcounter="https://rsignoriello.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</body>
+</html>
