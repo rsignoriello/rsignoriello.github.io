@@ -1,0 +1,807 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noai, noimageai">
+<title>Ruggiero Signoriello, Ph.D.</title>
+<meta name="description" content="Ruggiero Signoriello, Ph.D. – Computational Scientist in scientific software, CFD and HPC. I build simulation software and automated workflows that make engineering simulations faster to set up and more reliable, from raw geometry to results you can trust.">
+<meta property="og:title" content="Ruggiero Signoriello, Ph.D.">
+<meta property="og:description" content="Ruggiero Signoriello, Ph.D. – Computational Scientist in scientific software, CFD and HPC. I build simulation software and automated workflows that make engineering simulations faster to set up and more reliable, from raw geometry to results you can trust.">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://ruggiero.signoriello.dev/">
+<meta property="og:image" content="https://ruggiero.signoriello.dev/img/goccia-card.jpg">
+<link rel="canonical" href="https://ruggiero.signoriello.dev/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231F4E79'/%3E%3Ctext x='32' y='42' font-family='Helvetica,Arial,sans-serif' font-size='28' font-weight='700' fill='white' text-anchor='middle'%3ERS%3C/text%3E%3C/svg%3E">
+<script>
+  // apply the saved theme before the page is drawn (no flash of the wrong theme)
+  try { var t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
+<link rel="preload" href="fonts/IBMPlexSans-Regular-Latin1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">R. Signoriello, PhD</a>
+    <a href="#work">Projects</a>
+    <a href="#capabilities">Specialties</a>
+    <a href="#journey">Journey</a>
+    <a href="#talks">Presentations</a>
+    <a href="#contact">Contact</a>
+    <button class="theme-toggle" type="button" aria-label="Switch light/dark theme" title="Light / dark theme">
+      <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7a5 5 0 110 10 5 5 0 010-10zm0-5h0a1 1 0 011 1v2a1 1 0 01-2 0V3a1 1 0 011-1zm0 17a1 1 0 011 1v1a1 1 0 01-2 0v-1a1 1 0 011-1zM3 11h2a1 1 0 010 2H3a1 1 0 010-2zm16 0h2a1 1 0 010 2h-2a1 1 0 010-2zM5.6 4.2l1.4 1.4a1 1 0 01-1.4 1.4L4.2 5.6a1 1 0 011.4-1.4zm12.8 12.8l1.4 1.4a1 1 0 01-1.4 1.4l-1.4-1.4a1 1 0 011.4-1.4zM4.2 18.4l1.4-1.4a1 1 0 011.4 1.4l-1.4 1.4a1 1 0 01-1.4-1.4zM17 5.6l1.4-1.4a1 1 0 011.4 1.4L18.4 7A1 1 0 0117 5.6z"/></svg>
+    </button>
+  </div>
+</nav>
+
+<header id="top">
+  <picture>
+    <source srcset="img/cutcell-band-dark.svg" media="(prefers-color-scheme: dark)">
+    <img class="band" src="img/cutcell-band.svg" alt="">
+  </picture>
+  <div class="band-fill"></div>
+  <div class="band-h" aria-hidden="true"></div>
+  <div class="wrap hero">
+    <div>
+      <p class="kicker">Computational Scientist · Scientific Software · CFD &amp; HPC</p>
+      <h1>Hi, I'm Ruggiero.</h1>
+      <p class="lead">
+        I build <strong>simulation software</strong> and <strong>automated workflows</strong> that make engineering
+        simulations faster to set up and more reliable, from raw geometry to results you can trust.
+      </p>
+      <p class="meta">Based in Houston, Texas · Authorized to work in the U.S.</p>
+      <div class="buttons">
+        <a class="btn primary" data-goatcounter-click="hero-see-work" href="#work">See my work</a>
+        <a class="btn" data-goatcounter-click="resume-download-hero" href="https://1drv.ms/b/c/a7333cfdc3301dc4/IQABKrg-Tx84Q465GuaP1Ry7AYAypZ0C0ugnFOhXBMoLWoY?download=1" data-resume target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h9l5 5v15H6V2zm8 1.5V8h4.5L14 3.5zM8 12h10v1.5H8V12zm0 3h10v1.5H8V15zm0 3h7v1.5H8V18z"/></svg>
+          Resume
+        </a>
+        <a class="btn" data-goatcounter-click="linkedin-hero" href="https://www.linkedin.com/in/rsignoriello" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 11-.01 5 2.5 2.5 0 01.01-5zM3 9h4v12H3V9zm7 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.5c0-1.3-.02-3-1.83-3-1.83 0-2.1 1.43-2.1 2.9V21h-4V9z"/></svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+    <!-- Photo: save a square headshot as img/photo.jpg and it replaces the initials automatically -->
+    <div class="avatar" aria-label="Ruggiero Signoriello">
+      <img src="img/photo.jpg" alt="Ruggiero Signoriello" onerror="this.remove()">
+      <span>RS</span>
+    </div>
+  </div>
+</header>
+
+<!-- ======================= WORK ======================= -->
+<!-- Featured: at most 4 cards, newest first. A new project goes in at the top; the
+     oldest moves down to "Earlier work". Every card has the same parts: context · years,
+     title, one-line problem, 3 numbers, tags, link to its own page. -->
+<section id="work">
+  <div class="wrap">
+    <h2>Selected projects</h2>
+    <p class="section-title">What my work changed</p>
+    <!-- The story behind the work: to be rewritten -->
+    <div class="story">
+      <p>
+        Every CFD study starts with a mesh, and building one around a complex geometry is still slow and
+        largely manual: NASA's CFD Vision 2030 study names it one of the main bottlenecks of the whole
+        workflow.<sup><a href="#ref-1" id="cite-1">1</a></sup>
+      </p>
+      <p>
+        During my Ph.D. at Politecnico di Milano (2022–2026) I worked on it at two levels. First the
+        <strong>method</strong>: cutMesh, a cut-cell library that meshes any closed shape on a Cartesian
+        grid automatically, tested on 9 benchmark geometries and a standard OpenFOAM case. Then a real
+        <strong>application</strong>: a workflow that turns raw LiDAR scans of a Milan district into wind
+        and thermal-comfort simulations, which match the measured mean wind speed within about 5%.
+      </p>
+    </div>
+
+    <div class="cards">
+
+      <!-- HIDDEN for now (2026-11-22): cluster case study, not the focus. Uncomment to restore.
+      <a class="card" href="projects/cluster.html">
+        <div class="thumb schematic" aria-hidden="true">
+          <svg viewBox="0 0 460 300">
+            <rect x="10" y="8" width="440" height="46" rx="8" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+            <circle cx="38" cy="31" r="13" fill="var(--brand)"/><text x="38" y="36" font-size="14" font-weight="600" fill="#fff" text-anchor="middle">1</text>
+            <text x="64" y="36" font-size="15" font-weight="600" fill="var(--text)">Assess</text>
+            <text x="190" y="36" font-size="12" fill="var(--muted)">users, roles, data, entry points; risks ranked</text>
+            <path stroke="var(--muted)" stroke-width="1.5" fill="none" d="M38 54 V66"/>
+            <rect x="10" y="66" width="440" height="46" rx="8" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+            <circle cx="38" cy="89" r="13" fill="var(--brand)"/><text x="38" y="94" font-size="14" font-weight="600" fill="#fff" text-anchor="middle">2</text>
+            <text x="64" y="94" font-size="15" font-weight="600" fill="var(--text)">Harden</text>
+            <text x="190" y="94" font-size="12" fill="var(--muted)">separate admin access, central identity, MFA</text>
+            <path stroke="var(--muted)" stroke-width="1.5" fill="none" d="M38 112 V124"/>
+            <rect x="10" y="124" width="440" height="46" rx="8" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+            <circle cx="38" cy="147" r="13" fill="var(--brand)"/><text x="38" y="152" font-size="14" font-weight="600" fill="#fff" text-anchor="middle">3</text>
+            <text x="64" y="152" font-size="15" font-weight="600" fill="var(--text)">Keep it usable</text>
+            <text x="190" y="152" font-size="12" fill="var(--muted)">browser access via Open OnDemand</text>
+            <path stroke="var(--muted)" stroke-width="1.5" fill="none" d="M38 170 V182"/>
+            <rect x="10" y="182" width="440" height="46" rx="8" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+            <circle cx="38" cy="205" r="13" fill="var(--brand)"/><text x="38" y="210" font-size="14" font-weight="600" fill="#fff" text-anchor="middle">4</text>
+            <text x="64" y="210" font-size="15" font-weight="600" fill="var(--text)">Codify</text>
+            <text x="190" y="210" font-size="12" fill="var(--muted)">every access setting in Ansible, versioned</text>
+            <path stroke="var(--muted)" stroke-width="1.5" fill="none" d="M38 228 V240"/>
+            <rect x="10" y="240" width="440" height="46" rx="8" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+            <circle cx="38" cy="263" r="13" fill="var(--brand)"/><text x="38" y="268" font-size="14" font-weight="600" fill="#fff" text-anchor="middle">5</text>
+            <text x="64" y="268" font-size="15" font-weight="600" fill="var(--text)">Document</text>
+            <text x="190" y="268" font-size="12" fill="var(--muted)">report, residual risks, procedures</text>
+          </svg>
+        </div>
+        <div class="body">
+          <p class="tagline">Contract · Politecnico di Milano · 2026</p>
+          <h3>Research clusters secure by default, without slowing researchers down</h3>
+          <p class="problem"><b>How:</b> a five-step method, applied on a university HPC cluster: assess the risks, harden access without getting in researchers' way, codify every change and document it.</p>
+          <div class="numbers">
+            <div><b>IAM</b><span>central identity &amp; access</span></div>
+            <div><b>MFA</b><span>strong authentication</span></div>
+            <div><b>IaC</b><span>every change in Ansible</span></div>
+          </div>
+          <div class="tags"><span class="tag">RHEL</span><span class="tag">LDAP / SSSD</span><span class="tag">Ansible</span><span class="tag">Open OnDemand</span></div>
+          <span class="more">Read the case study →</span>
+        </div>
+      </a>
+      -->
+
+      <a class="card" href="projects/wind.html">
+        <div class="thumb"><div class="wf-badge"><svg viewBox="-34 -32 68 64" width="46" height="44" aria-hidden="true"><rect x="-6" y="-6" width="12" height="30" fill="var(--accent)"/>
+  <path d="M-31 24 H31" stroke="var(--muted)" stroke-width="1.2"/>
+  <path d="M-30 -24 C-12 -24 -12 -24 0 -24 S12 -24 28 -24" fill="none" stroke="#2166ac" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M24 -27 l4 3 l-4 3" fill="none" stroke="#2166ac" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M-30 -15 C-12 -15 -12 -24 0 -24 S12 -15 28 -15" fill="none" stroke="#d6604d" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M24 -18 l4 3 l-4 3" fill="none" stroke="#d6604d" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M-30 -6 C-12 -6 -12 -14 0 -14 S12 -6 28 -6" fill="none" stroke="#f4a582" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M24 -9 l4 3 l-4 3" fill="none" stroke="#f4a582" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M-30 5 H-11 M11 5 H28" fill="none" stroke="#4393c3" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M24 2 l4 3 l-4 3" fill="none" stroke="#4393c3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M-30 14 H-11 M11 14 H28" fill="none" stroke="#92c5de" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M24 11 l4 3 l-4 3" fill="none" stroke="#92c5de" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><div><span>Step 5 of 5</span><b>Simulate</b></div></div><img src="img/goccia-card.jpg" alt="Simulated wind speed and direction between the buildings of a Milan district at pedestrian height" loading="lazy"></div>
+        <div class="body">
+          <p class="tagline">Ph.D. · Project for the City of Milan · 2022–26</p>
+          <h3>Milan planners can see how wind moves through a district before redeveloping it</h3>
+          <p class="problem"><b>How:</b> a scripted workflow from LiDAR scans to a validated wind simulation.</p>
+          <!-- numbers hidden for now (2026-11-22)
+          <div class="numbers">
+            <div><b>38.8M</b><span>mesh cells</span></div>
+            <div><b>80</b><span>CPU cores (MPI)</span></div>
+            <div><b>~5%</b><span>from measured mean wind</span></div>
+          </div>
+          -->
+          <div class="tags"><span class="tag">OpenFOAM</span><span class="tag">RANS k–ε</span><span class="tag">MPI</span><span class="tag">Validation</span></div>
+          <span class="more">Read the case study →</span>
+        </div>
+      </a>
+
+      <a class="card" href="projects/lidar-cfd.html">
+        <div class="thumb schematic" aria-hidden="true">
+          <svg viewBox="0 0 500 305" role="img" aria-label="Five-stage workflow: LiDAR survey, classify, rebuild, mesh, simulate" font-family="inherit">
+            <rect x="25" y="10" width="130" height="100" rx="14" fill="var(--bg)" stroke="var(--line)" stroke-width="1.5"/>
+            <g transform="translate(90.0 63.0) scale(1.45) translate(-90.0 -63.0)"><circle cx="79.4" cy="83.9" r="1.7" fill="var(--muted)"/>
+            <circle cx="99.1" cy="83.4" r="1.7" fill="var(--muted)"/>
+            <circle cx="92.2" cy="85.2" r="1.7" fill="var(--muted)"/>
+            <circle cx="63.5" cy="86.0" r="1.7" fill="var(--muted)"/>
+            <circle cx="62.2" cy="85.6" r="1.7" fill="var(--muted)"/>
+            <circle cx="64.2" cy="83.5" r="1.7" fill="var(--muted)"/>
+            <circle cx="85.5" cy="88.0" r="1.7" fill="var(--muted)"/>
+            <circle cx="67.4" cy="84.3" r="1.7" fill="var(--muted)"/>
+            <circle cx="97.6" cy="88.7" r="1.7" fill="var(--muted)"/>
+            <circle cx="94.6" cy="85.4" r="1.7" fill="var(--muted)"/>
+            <circle cx="118.6" cy="83.3" r="1.7" fill="var(--muted)"/>
+            <circle cx="111.5" cy="84.7" r="1.7" fill="var(--muted)"/>
+            <circle cx="68.7" cy="83.7" r="1.7" fill="var(--muted)"/>
+            <circle cx="78.5" cy="87.9" r="1.7" fill="var(--muted)"/>
+            <circle cx="70.8" cy="86.5" r="1.7" fill="var(--muted)"/>
+            <circle cx="98.3" cy="85.2" r="1.7" fill="var(--muted)"/>
+            <circle cx="92.9" cy="83.4" r="1.7" fill="var(--muted)"/>
+            <circle cx="63.6" cy="84.2" r="1.7" fill="var(--muted)"/>
+            <circle cx="100.8" cy="85.6" r="1.7" fill="var(--muted)"/>
+            <circle cx="78.8" cy="86.5" r="1.7" fill="var(--muted)"/>
+            <circle cx="87.2" cy="84.8" r="1.7" fill="var(--muted)"/>
+            <circle cx="107.7" cy="87.2" r="1.7" fill="var(--muted)"/>
+            <circle cx="74.6" cy="86.4" r="1.7" fill="var(--muted)"/>
+            <circle cx="91.5" cy="88.3" r="1.7" fill="var(--muted)"/>
+            <circle cx="103.8" cy="84.7" r="1.7" fill="var(--muted)"/>
+            <circle cx="118.8" cy="83.7" r="1.7" fill="var(--muted)"/>
+            <circle cx="66.9" cy="66.7" r="1.7" fill="var(--muted)"/>
+            <circle cx="80.8" cy="68.5" r="1.7" fill="var(--muted)"/>
+            <circle cx="85.5" cy="63.6" r="1.7" fill="var(--muted)"/>
+            <circle cx="76.8" cy="51.0" r="1.7" fill="var(--muted)"/>
+            <circle cx="80.8" cy="55.8" r="1.7" fill="var(--muted)"/>
+            <circle cx="72.9" cy="51.4" r="1.7" fill="var(--muted)"/>
+            <circle cx="68.9" cy="56.7" r="1.7" fill="var(--muted)"/>
+            <circle cx="82.2" cy="50.2" r="1.7" fill="var(--muted)"/>
+            <circle cx="66.3" cy="62.7" r="1.7" fill="var(--muted)"/>
+            <circle cx="85.3" cy="65.1" r="1.7" fill="var(--muted)"/>
+            <circle cx="68.8" cy="50.5" r="1.7" fill="var(--muted)"/>
+            <circle cx="78.8" cy="54.7" r="1.7" fill="var(--muted)"/>
+            <circle cx="68.6" cy="68.1" r="1.7" fill="var(--muted)"/>
+            <circle cx="84.1" cy="62.3" r="1.7" fill="var(--muted)"/>
+            <circle cx="78.0" cy="64.9" r="1.7" fill="var(--muted)"/>
+            <circle cx="85.8" cy="65.2" r="1.7" fill="var(--muted)"/>
+            <circle cx="80.1" cy="65.8" r="1.7" fill="var(--muted)"/>
+            <circle cx="67.3" cy="68.8" r="1.7" fill="var(--muted)"/>
+            <circle cx="83.0" cy="65.3" r="1.7" fill="var(--muted)"/>
+            <circle cx="65.3" cy="57.2" r="1.7" fill="var(--muted)"/>
+            <circle cx="80.7" cy="49.9" r="1.7" fill="var(--muted)"/>
+            <circle cx="74.6" cy="69.4" r="1.7" fill="var(--muted)"/>
+            <circle cx="68.9" cy="70.6" r="1.7" fill="var(--muted)"/>
+            <circle cx="80.5" cy="59.7" r="1.7" fill="var(--muted)"/>
+            <circle cx="78.6" cy="66.7" r="1.7" fill="var(--muted)"/>
+            <circle cx="76.9" cy="70.1" r="1.7" fill="var(--muted)"/>
+            <circle cx="70.8" cy="57.4" r="1.7" fill="var(--muted)"/>
+            <circle cx="83.8" cy="61.2" r="1.7" fill="var(--muted)"/>
+            <circle cx="69.8" cy="68.3" r="1.7" fill="var(--muted)"/>
+            <circle cx="85.5" cy="57.8" r="1.7" fill="var(--muted)"/>
+            <circle cx="66.6" cy="60.0" r="1.7" fill="var(--muted)"/>
+            <circle cx="74.8" cy="58.3" r="1.7" fill="var(--muted)"/>
+            <circle cx="84.6" cy="54.1" r="1.7" fill="var(--muted)"/>
+            <circle cx="83.6" cy="52.6" r="1.7" fill="var(--muted)"/>
+            <circle cx="75.7" cy="77.0" r="1.7" fill="var(--muted)"/>
+            <circle cx="75.0" cy="79.3" r="1.7" fill="var(--muted)"/>
+            <circle cx="74.9" cy="73.7" r="1.7" fill="var(--muted)"/>
+            <circle cx="75.3" cy="74.6" r="1.7" fill="var(--muted)"/>
+            <circle cx="102.8" cy="48.8" r="1.7" fill="var(--muted)"/>
+            <circle cx="96.0" cy="52.3" r="1.7" fill="var(--muted)"/>
+            <circle cx="98.0" cy="59.7" r="1.7" fill="var(--muted)"/>
+            <circle cx="96.5" cy="77.6" r="1.7" fill="var(--muted)"/>
+            <circle cx="108.3" cy="52.2" r="1.7" fill="var(--muted)"/>
+            <circle cx="101.0" cy="59.2" r="1.7" fill="var(--muted)"/>
+            <circle cx="103.3" cy="51.3" r="1.7" fill="var(--muted)"/>
+            <circle cx="113.0" cy="81.8" r="1.7" fill="var(--muted)"/>
+            <circle cx="105.3" cy="63.9" r="1.7" fill="var(--muted)"/>
+            <circle cx="97.7" cy="50.6" r="1.7" fill="var(--muted)"/>
+            <circle cx="102.9" cy="56.3" r="1.7" fill="var(--muted)"/>
+            <circle cx="112.6" cy="52.7" r="1.7" fill="var(--muted)"/>
+            <circle cx="96.5" cy="80.3" r="1.7" fill="var(--muted)"/>
+            <circle cx="106.6" cy="52.1" r="1.7" fill="var(--muted)"/>
+            <circle cx="106.9" cy="47.9" r="1.7" fill="var(--muted)"/>
+            <circle cx="106.6" cy="81.2" r="1.7" fill="var(--muted)"/>
+            <circle cx="113.3" cy="71.4" r="1.7" fill="var(--muted)"/>
+            <circle cx="101.2" cy="59.8" r="1.7" fill="var(--muted)"/>
+            <circle cx="99.3" cy="74.0" r="1.7" fill="var(--muted)"/>
+            <circle cx="106.7" cy="74.3" r="1.7" fill="var(--muted)"/>
+            <circle cx="102.6" cy="54.8" r="1.7" fill="var(--muted)"/>
+            <circle cx="112.2" cy="81.5" r="1.7" fill="var(--muted)"/>
+            <circle cx="113.1" cy="75.2" r="1.7" fill="var(--muted)"/>
+            <circle cx="112.4" cy="72.9" r="1.7" fill="var(--muted)"/>
+            <circle cx="100.5" cy="65.1" r="1.7" fill="var(--muted)"/>
+            <circle cx="103.1" cy="48.0" r="1.7" fill="var(--muted)"/>
+            <circle cx="96.6" cy="56.8" r="1.7" fill="var(--muted)"/>
+            <circle cx="101.2" cy="71.2" r="1.7" fill="var(--muted)"/>
+            <circle cx="115.1" cy="62.7" r="1.7" fill="var(--muted)"/>
+            <circle cx="114.7" cy="81.6" r="1.7" fill="var(--muted)"/>
+            <circle cx="115.1" cy="59.8" r="1.7" fill="var(--muted)"/>
+            <circle cx="100.4" cy="54.9" r="1.7" fill="var(--muted)"/>
+            <circle cx="99.9" cy="54.2" r="1.7" fill="var(--muted)"/>
+            <circle cx="108.5" cy="78.5" r="1.7" fill="var(--muted)"/></g>
+            <circle cx="41" cy="26" r="10" fill="var(--brand)"/><text x="41" y="30.5" font-size="12" font-weight="600" fill="#fff" text-anchor="middle">1</text>
+            <text x="90.0" y="135" font-size="16" font-weight="600" fill="var(--text)" text-anchor="middle">LiDAR survey</text>
+            <rect x="185" y="10" width="130" height="100" rx="14" fill="var(--bg)" stroke="var(--line)" stroke-width="1.5"/>
+            <g transform="translate(250.0 63.0) scale(1.45) translate(-250.0 -63.0)"><circle cx="239.4" cy="83.9" r="1.7" fill="#9c7a54"/>
+            <circle cx="259.1" cy="83.4" r="1.7" fill="#9c7a54"/>
+            <circle cx="252.2" cy="85.2" r="1.7" fill="#9c7a54"/>
+            <circle cx="223.5" cy="86.0" r="1.7" fill="#9c7a54"/>
+            <circle cx="222.2" cy="85.6" r="1.7" fill="#9c7a54"/>
+            <circle cx="224.2" cy="83.5" r="1.7" fill="#9c7a54"/>
+            <circle cx="245.5" cy="88.0" r="1.7" fill="#9c7a54"/>
+            <circle cx="227.4" cy="84.3" r="1.7" fill="#9c7a54"/>
+            <circle cx="257.6" cy="88.7" r="1.7" fill="#9c7a54"/>
+            <circle cx="254.6" cy="85.4" r="1.7" fill="#9c7a54"/>
+            <circle cx="278.6" cy="83.3" r="1.7" fill="#9c7a54"/>
+            <circle cx="271.5" cy="84.7" r="1.7" fill="#9c7a54"/>
+            <circle cx="228.7" cy="83.7" r="1.7" fill="#9c7a54"/>
+            <circle cx="238.5" cy="87.9" r="1.7" fill="#9c7a54"/>
+            <circle cx="230.8" cy="86.5" r="1.7" fill="#9c7a54"/>
+            <circle cx="258.3" cy="85.2" r="1.7" fill="#9c7a54"/>
+            <circle cx="252.9" cy="83.4" r="1.7" fill="#9c7a54"/>
+            <circle cx="223.6" cy="84.2" r="1.7" fill="#9c7a54"/>
+            <circle cx="260.8" cy="85.6" r="1.7" fill="#9c7a54"/>
+            <circle cx="238.8" cy="86.5" r="1.7" fill="#9c7a54"/>
+            <circle cx="247.2" cy="84.8" r="1.7" fill="#9c7a54"/>
+            <circle cx="267.7" cy="87.2" r="1.7" fill="#9c7a54"/>
+            <circle cx="234.6" cy="86.4" r="1.7" fill="#9c7a54"/>
+            <circle cx="251.5" cy="88.3" r="1.7" fill="#9c7a54"/>
+            <circle cx="263.8" cy="84.7" r="1.7" fill="#9c7a54"/>
+            <circle cx="278.8" cy="83.7" r="1.7" fill="#9c7a54"/>
+            <circle cx="226.9" cy="66.7" r="1.7" fill="#3f9b4f"/>
+            <circle cx="240.8" cy="68.5" r="1.7" fill="#3f9b4f"/>
+            <circle cx="245.5" cy="63.6" r="1.7" fill="#3f9b4f"/>
+            <circle cx="236.8" cy="51.0" r="1.7" fill="#3f9b4f"/>
+            <circle cx="240.8" cy="55.8" r="1.7" fill="#3f9b4f"/>
+            <circle cx="232.9" cy="51.4" r="1.7" fill="#3f9b4f"/>
+            <circle cx="228.9" cy="56.7" r="1.7" fill="#3f9b4f"/>
+            <circle cx="242.2" cy="50.2" r="1.7" fill="#3f9b4f"/>
+            <circle cx="226.3" cy="62.7" r="1.7" fill="#3f9b4f"/>
+            <circle cx="245.3" cy="65.1" r="1.7" fill="#3f9b4f"/>
+            <circle cx="228.8" cy="50.5" r="1.7" fill="#3f9b4f"/>
+            <circle cx="238.8" cy="54.7" r="1.7" fill="#3f9b4f"/>
+            <circle cx="228.6" cy="68.1" r="1.7" fill="#3f9b4f"/>
+            <circle cx="244.1" cy="62.3" r="1.7" fill="#3f9b4f"/>
+            <circle cx="238.0" cy="64.9" r="1.7" fill="#3f9b4f"/>
+            <circle cx="245.8" cy="65.2" r="1.7" fill="#3f9b4f"/>
+            <circle cx="240.1" cy="65.8" r="1.7" fill="#3f9b4f"/>
+            <circle cx="227.3" cy="68.8" r="1.7" fill="#3f9b4f"/>
+            <circle cx="243.0" cy="65.3" r="1.7" fill="#3f9b4f"/>
+            <circle cx="225.3" cy="57.2" r="1.7" fill="#3f9b4f"/>
+            <circle cx="240.7" cy="49.9" r="1.7" fill="#3f9b4f"/>
+            <circle cx="234.6" cy="69.4" r="1.7" fill="#3f9b4f"/>
+            <circle cx="228.9" cy="70.6" r="1.7" fill="#3f9b4f"/>
+            <circle cx="240.5" cy="59.7" r="1.7" fill="#3f9b4f"/>
+            <circle cx="238.6" cy="66.7" r="1.7" fill="#3f9b4f"/>
+            <circle cx="236.9" cy="70.1" r="1.7" fill="#3f9b4f"/>
+            <circle cx="230.8" cy="57.4" r="1.7" fill="#3f9b4f"/>
+            <circle cx="243.8" cy="61.2" r="1.7" fill="#3f9b4f"/>
+            <circle cx="229.8" cy="68.3" r="1.7" fill="#3f9b4f"/>
+            <circle cx="245.5" cy="57.8" r="1.7" fill="#3f9b4f"/>
+            <circle cx="226.6" cy="60.0" r="1.7" fill="#3f9b4f"/>
+            <circle cx="234.8" cy="58.3" r="1.7" fill="#3f9b4f"/>
+            <circle cx="244.6" cy="54.1" r="1.7" fill="#3f9b4f"/>
+            <circle cx="243.6" cy="52.6" r="1.7" fill="#3f9b4f"/>
+            <circle cx="235.7" cy="77.0" r="1.7" fill="#3f9b4f"/>
+            <circle cx="235.0" cy="79.3" r="1.7" fill="#3f9b4f"/>
+            <circle cx="234.9" cy="73.7" r="1.7" fill="#3f9b4f"/>
+            <circle cx="235.3" cy="74.6" r="1.7" fill="#3f9b4f"/>
+            <circle cx="262.8" cy="48.8" r="1.7" fill="#e8962e"/>
+            <circle cx="256.0" cy="52.3" r="1.7" fill="#e8962e"/>
+            <circle cx="258.0" cy="59.7" r="1.7" fill="#e8962e"/>
+            <circle cx="256.5" cy="77.6" r="1.7" fill="#e8962e"/>
+            <circle cx="268.3" cy="52.2" r="1.7" fill="#e8962e"/>
+            <circle cx="261.0" cy="59.2" r="1.7" fill="#e8962e"/>
+            <circle cx="263.3" cy="51.3" r="1.7" fill="#e8962e"/>
+            <circle cx="273.0" cy="81.8" r="1.7" fill="#e8962e"/>
+            <circle cx="265.3" cy="63.9" r="1.7" fill="#e8962e"/>
+            <circle cx="257.7" cy="50.6" r="1.7" fill="#e8962e"/>
+            <circle cx="262.9" cy="56.3" r="1.7" fill="#e8962e"/>
+            <circle cx="272.6" cy="52.7" r="1.7" fill="#e8962e"/>
+            <circle cx="256.5" cy="80.3" r="1.7" fill="#e8962e"/>
+            <circle cx="266.6" cy="52.1" r="1.7" fill="#e8962e"/>
+            <circle cx="266.9" cy="47.9" r="1.7" fill="#e8962e"/>
+            <circle cx="266.6" cy="81.2" r="1.7" fill="#e8962e"/>
+            <circle cx="273.3" cy="71.4" r="1.7" fill="#e8962e"/>
+            <circle cx="261.2" cy="59.8" r="1.7" fill="#e8962e"/>
+            <circle cx="259.3" cy="74.0" r="1.7" fill="#e8962e"/>
+            <circle cx="266.7" cy="74.3" r="1.7" fill="#e8962e"/>
+            <circle cx="262.6" cy="54.8" r="1.7" fill="#e8962e"/>
+            <circle cx="272.2" cy="81.5" r="1.7" fill="#e8962e"/>
+            <circle cx="273.1" cy="75.2" r="1.7" fill="#e8962e"/>
+            <circle cx="272.4" cy="72.9" r="1.7" fill="#e8962e"/>
+            <circle cx="260.5" cy="65.1" r="1.7" fill="#e8962e"/>
+            <circle cx="263.1" cy="48.0" r="1.7" fill="#e8962e"/>
+            <circle cx="256.6" cy="56.8" r="1.7" fill="#e8962e"/>
+            <circle cx="261.2" cy="71.2" r="1.7" fill="#e8962e"/>
+            <circle cx="275.1" cy="62.7" r="1.7" fill="#e8962e"/>
+            <circle cx="274.7" cy="81.6" r="1.7" fill="#e8962e"/>
+            <circle cx="275.1" cy="59.8" r="1.7" fill="#e8962e"/>
+            <circle cx="260.4" cy="54.9" r="1.7" fill="#e8962e"/>
+            <circle cx="259.9" cy="54.2" r="1.7" fill="#e8962e"/>
+            <circle cx="268.5" cy="78.5" r="1.7" fill="#e8962e"/></g>
+            <circle cx="201" cy="26" r="10" fill="var(--brand)"/><text x="201" y="30.5" font-size="12" font-weight="600" fill="#fff" text-anchor="middle">2</text>
+            <text x="250.0" y="135" font-size="16" font-weight="600" fill="var(--text)" text-anchor="middle">Classify</text>
+            <rect x="345" y="10" width="130" height="100" rx="14" fill="var(--bg)" stroke="var(--line)" stroke-width="1.5"/>
+            <g transform="translate(410.0 63.0) scale(1.45) translate(-410.0 -63.0)"><path d="M379.0 87.0 H441.0" stroke="var(--muted)" stroke-width="1.2"/>
+            <path d="M383.0 63.0 l9 -7 h18 l-9 7z" fill="var(--accent-2)" fill-opacity=".45" stroke="var(--accent)" stroke-width="1.2" stroke-linejoin="round"/><path d="M401.0 63.0 l9 -7 V80.0 l-9 7z" fill="var(--accent)" fill-opacity=".55" stroke="var(--accent)" stroke-width="1.2" stroke-linejoin="round"/><rect x="383.0" y="63.0" width="18" height="24" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.2"/>
+            <path d="M408.0 45.0 l9 -7 h18 l-9 7z" fill="var(--accent-2)" fill-opacity=".45" stroke="var(--accent)" stroke-width="1.2" stroke-linejoin="round"/><path d="M426.0 45.0 l9 -7 V80.0 l-9 7z" fill="var(--accent)" fill-opacity=".55" stroke="var(--accent)" stroke-width="1.2" stroke-linejoin="round"/><rect x="408.0" y="45.0" width="18" height="42" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.2"/></g>
+            <circle cx="361" cy="26" r="10" fill="var(--brand)"/><text x="361" y="30.5" font-size="12" font-weight="600" fill="#fff" text-anchor="middle">3</text>
+            <text x="410.0" y="135" font-size="16" font-weight="600" fill="var(--text)" text-anchor="middle">Rebuild</text>
+            <rect x="105" y="165" width="130" height="100" rx="14" fill="var(--bg)" stroke="var(--line)" stroke-width="1.5"/>
+            <g transform="translate(170.0 218.0) scale(1.45) translate(-170.0 -218.0)"><rect x="142.0" y="190.0" width="56" height="56" fill="none" stroke="var(--muted)" stroke-opacity=".7" stroke-width="1"/>
+            <path d="M156.0 190.0 V246.0 M142.0 204.0 H198.0" stroke="var(--muted)" stroke-opacity=".7" stroke-width="1"/>
+            <path d="M170.0 190.0 V246.0 M142.0 218.0 H198.0" stroke="var(--muted)" stroke-opacity=".7" stroke-width="1"/>
+            <path d="M184.0 190.0 V246.0 M142.0 232.0 H198.0" stroke="var(--muted)" stroke-opacity=".7" stroke-width="1"/>
+            <path d="M163.0 204.0 V218.0 M156.0 211.0 H170.0" stroke="var(--accent-2)" stroke-width=".8"/>
+            <path d="M163.0 218.0 V232.0 M156.0 225.0 H170.0" stroke="var(--accent-2)" stroke-width=".8"/>
+            <path d="M163.0 232.0 V246.0 M156.0 239.0 H170.0" stroke="var(--accent-2)" stroke-width=".8"/>
+            <path d="M177.0 204.0 V218.0 M170.0 211.0 H184.0" stroke="var(--accent-2)" stroke-width=".8"/>
+            <path d="M177.0 218.0 V232.0 M170.0 225.0 H184.0" stroke="var(--accent-2)" stroke-width=".8"/>
+            <path d="M177.0 232.0 V246.0 M170.0 239.0 H184.0" stroke="var(--accent-2)" stroke-width=".8"/>
+            <rect x="163.0" y="218.0" width="14" height="28" fill="var(--accent)"/></g>
+            <circle cx="121" cy="181" r="10" fill="var(--brand)"/><text x="121" y="185.5" font-size="12" font-weight="600" fill="#fff" text-anchor="middle">4</text>
+            <text x="170.0" y="290" font-size="16" font-weight="600" fill="var(--text)" text-anchor="middle">Mesh</text>
+            <rect x="265" y="165" width="130" height="100" rx="14" fill="var(--bg)" stroke="var(--line)" stroke-width="1.5"/>
+            <g transform="translate(330.0 218.0) scale(1.45) translate(-330.0 -218.0)"><rect x="324.0" y="212.0" width="12" height="30" fill="var(--accent)"/>
+            <path d="M299.0 242.0 H361.0" stroke="var(--muted)" stroke-width="1.2"/>
+            <path d="M300.0 194.0 C318.0 194.0 318.0 194.0 330.0 194.0 S342.0 194.0 358.0 194.0" fill="none" stroke="#2166ac" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M354.0 191.0 l4 3 l-4 3" fill="none" stroke="#2166ac" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M300.0 203.0 C318.0 203.0 318.0 194.0 330.0 194.0 S342.0 203.0 358.0 203.0" fill="none" stroke="#d6604d" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M354.0 200.0 l4 3 l-4 3" fill="none" stroke="#d6604d" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M300.0 212.0 C318.0 212.0 318.0 204.0 330.0 204.0 S342.0 212.0 358.0 212.0" fill="none" stroke="#f4a582" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M354.0 209.0 l4 3 l-4 3" fill="none" stroke="#f4a582" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M300.0 223.0 H319.0 M341.0 223.0 H358.0" fill="none" stroke="#4393c3" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M354.0 220.0 l4 3 l-4 3" fill="none" stroke="#4393c3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M300.0 232.0 H319.0 M341.0 232.0 H358.0" fill="none" stroke="#92c5de" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M354.0 229.0 l4 3 l-4 3" fill="none" stroke="#92c5de" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+            <circle cx="281" cy="181" r="10" fill="var(--brand)"/><text x="281" y="185.5" font-size="12" font-weight="600" fill="#fff" text-anchor="middle">5</text>
+            <text x="330.0" y="290" font-size="16" font-weight="600" fill="var(--text)" text-anchor="middle">Simulate</text>
+            <path d="M159 60 h18 m-5 -5 l5 5 l-5 5" fill="none" stroke="var(--accent-2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M319 60 h18 m-5 -5 l5 5 l-5 5" fill="none" stroke="var(--accent-2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M410 143 V151 H80 V215 H101 m-5 -5 l5 5 l-5 5" fill="none" stroke="var(--accent-2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M239 215 h18 m-5 -5 l5 5 l-5 5" fill="none" stroke="var(--accent-2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="body">
+          <p class="tagline">Ph.D. · Project for the City of Milan · 2022–26</p>
+          <h3>From raw LiDAR scans to a city model ready to simulate</h3>
+          <p class="problem"><b>How:</b> a chain of Python and C++ tools, from raw point clouds to a watertight model ready to mesh.</p>
+          <!-- numbers hidden for now (2026-11-22)
+          <div class="numbers">
+            <div><b>2</b><span>LiDAR surveys</span></div>
+            <div><b>1,259</b><span>buildings reconstructed</span></div>
+            <div><b>156</b><span>at high detail</span></div>
+          </div>
+          -->
+          <div class="tags"><span class="tag">Python</span><span class="tag">C++</span><span class="tag">CloudCompare</span><span class="tag">CGAL</span><span class="tag">QGIS</span></div>
+          <span class="more">Read the case study →</span>
+        </div>
+      </a>
+
+      <a class="card" href="projects/pointclouds.html">
+        <div class="thumb"><div class="wf-badge"><svg viewBox="-34 -32 68 64" width="46" height="44" aria-hidden="true"><circle cx="-10.6" cy="20.9" r="1.7" fill="#9c7a54"/>
+  <circle cx="9.1" cy="20.4" r="1.7" fill="#9c7a54"/>
+  <circle cx="2.2" cy="22.2" r="1.7" fill="#9c7a54"/>
+  <circle cx="-26.5" cy="23.0" r="1.7" fill="#9c7a54"/>
+  <circle cx="-27.8" cy="22.6" r="1.7" fill="#9c7a54"/>
+  <circle cx="-25.8" cy="20.5" r="1.7" fill="#9c7a54"/>
+  <circle cx="-4.5" cy="25.0" r="1.7" fill="#9c7a54"/>
+  <circle cx="-22.6" cy="21.3" r="1.7" fill="#9c7a54"/>
+  <circle cx="7.6" cy="25.7" r="1.7" fill="#9c7a54"/>
+  <circle cx="4.6" cy="22.4" r="1.7" fill="#9c7a54"/>
+  <circle cx="28.6" cy="20.3" r="1.7" fill="#9c7a54"/>
+  <circle cx="21.5" cy="21.7" r="1.7" fill="#9c7a54"/>
+  <circle cx="-21.3" cy="20.7" r="1.7" fill="#9c7a54"/>
+  <circle cx="-11.5" cy="24.9" r="1.7" fill="#9c7a54"/>
+  <circle cx="-19.2" cy="23.5" r="1.7" fill="#9c7a54"/>
+  <circle cx="8.3" cy="22.2" r="1.7" fill="#9c7a54"/>
+  <circle cx="2.9" cy="20.4" r="1.7" fill="#9c7a54"/>
+  <circle cx="-26.4" cy="21.2" r="1.7" fill="#9c7a54"/>
+  <circle cx="10.8" cy="22.6" r="1.7" fill="#9c7a54"/>
+  <circle cx="-11.2" cy="23.5" r="1.7" fill="#9c7a54"/>
+  <circle cx="-2.8" cy="21.8" r="1.7" fill="#9c7a54"/>
+  <circle cx="17.7" cy="24.2" r="1.7" fill="#9c7a54"/>
+  <circle cx="-15.4" cy="23.4" r="1.7" fill="#9c7a54"/>
+  <circle cx="1.5" cy="25.3" r="1.7" fill="#9c7a54"/>
+  <circle cx="13.8" cy="21.7" r="1.7" fill="#9c7a54"/>
+  <circle cx="28.8" cy="20.7" r="1.7" fill="#9c7a54"/>
+  <circle cx="-23.1" cy="3.7" r="1.7" fill="#3f9b4f"/>
+  <circle cx="-9.2" cy="5.5" r="1.7" fill="#3f9b4f"/>
+  <circle cx="-4.5" cy="0.6" r="1.7" fill="#3f9b4f"/>
+  <circle cx="-13.2" cy="-12.0" r="1.7" fill="#3f9b4f"/>
+  <circle cx="-9.2" cy="-7.2" r="1.7" fill="#3f9b4f"/>
+  <circle cx="-17.1" cy="-11.6" r="1.7" fill="#3f9b4f"/>
+  <circle cx="-21.1" cy="-6.3" r="1.7" fill="#3f9b4f"/>
+  <circle cx="-7.8" cy="-12.8" r="1.7" fill="#3f9b4f"/>
+  <circle cx="-23.7" cy="-0.3" r="1.7" fill="#3f9b4f"/>
+  <circle cx="-4.7" cy="2.1" r="1.7" fill="#3f9b4f"/>
+  <circle cx="-21.2" cy="-12.5" r="1.7" fill="#3f9b4f"/>
+  <circle cx="-11.2" cy="-8.3" r="1.7" fill="#3f9b4f"/>
+  <circle cx="-21.4" cy="5.1" r="1.7" fill="#3f9b4f"/>
+  <circle cx="-5.9" cy="-0.7" r="1.7" fill="#3f9b4f"/>
+  <circle cx="-12.0" cy="1.9" r="1.7" fill="#3f9b4f"/>
+  <circle cx="-4.2" cy="2.2" r="1.7" fill="#3f9b4f"/>
+  <circle cx="-9.9" cy="2.8" r="1.7" fill="#3f9b4f"/>
+  <circle cx="-22.7" cy="5.8" r="1.7" fill="#3f9b4f"/>
+  <circle cx="-7.0" cy="2.3" r="1.7" fill="#3f9b4f"/>
+  <circle cx="-24.7" cy="-5.8" r="1.7" fill="#3f9b4f"/>
+  <circle cx="-9.3" cy="-13.1" r="1.7" fill="#3f9b4f"/>
+  <circle cx="-15.4" cy="6.4" r="1.7" fill="#3f9b4f"/>
+  <circle cx="-21.1" cy="7.6" r="1.7" fill="#3f9b4f"/>
+  <circle cx="-9.5" cy="-3.3" r="1.7" fill="#3f9b4f"/>
+  <circle cx="-11.4" cy="3.7" r="1.7" fill="#3f9b4f"/>
+  <circle cx="-13.1" cy="7.1" r="1.7" fill="#3f9b4f"/>
+  <circle cx="-19.2" cy="-5.6" r="1.7" fill="#3f9b4f"/>
+  <circle cx="-6.2" cy="-1.8" r="1.7" fill="#3f9b4f"/>
+  <circle cx="-20.2" cy="5.3" r="1.7" fill="#3f9b4f"/>
+  <circle cx="-4.5" cy="-5.2" r="1.7" fill="#3f9b4f"/>
+  <circle cx="-23.4" cy="-3.0" r="1.7" fill="#3f9b4f"/>
+  <circle cx="-15.2" cy="-4.7" r="1.7" fill="#3f9b4f"/>
+  <circle cx="-5.4" cy="-8.9" r="1.7" fill="#3f9b4f"/>
+  <circle cx="-6.4" cy="-10.4" r="1.7" fill="#3f9b4f"/>
+  <circle cx="-14.3" cy="14.0" r="1.7" fill="#3f9b4f"/>
+  <circle cx="-15.0" cy="16.3" r="1.7" fill="#3f9b4f"/>
+  <circle cx="-15.1" cy="10.7" r="1.7" fill="#3f9b4f"/>
+  <circle cx="-14.7" cy="11.6" r="1.7" fill="#3f9b4f"/>
+  <circle cx="12.8" cy="-14.2" r="1.7" fill="#e8962e"/>
+  <circle cx="6.0" cy="-10.7" r="1.7" fill="#e8962e"/>
+  <circle cx="8.0" cy="-3.3" r="1.7" fill="#e8962e"/>
+  <circle cx="6.5" cy="14.6" r="1.7" fill="#e8962e"/>
+  <circle cx="18.3" cy="-10.8" r="1.7" fill="#e8962e"/>
+  <circle cx="11.0" cy="-3.8" r="1.7" fill="#e8962e"/>
+  <circle cx="13.3" cy="-11.7" r="1.7" fill="#e8962e"/>
+  <circle cx="23.0" cy="18.8" r="1.7" fill="#e8962e"/>
+  <circle cx="15.3" cy="0.9" r="1.7" fill="#e8962e"/>
+  <circle cx="7.7" cy="-12.4" r="1.7" fill="#e8962e"/>
+  <circle cx="12.9" cy="-6.7" r="1.7" fill="#e8962e"/>
+  <circle cx="22.6" cy="-10.3" r="1.7" fill="#e8962e"/>
+  <circle cx="6.5" cy="17.3" r="1.7" fill="#e8962e"/>
+  <circle cx="16.6" cy="-10.9" r="1.7" fill="#e8962e"/>
+  <circle cx="16.9" cy="-15.1" r="1.7" fill="#e8962e"/>
+  <circle cx="16.6" cy="18.2" r="1.7" fill="#e8962e"/>
+  <circle cx="23.3" cy="8.4" r="1.7" fill="#e8962e"/>
+  <circle cx="11.2" cy="-3.2" r="1.7" fill="#e8962e"/>
+  <circle cx="9.3" cy="11.0" r="1.7" fill="#e8962e"/>
+  <circle cx="16.7" cy="11.3" r="1.7" fill="#e8962e"/>
+  <circle cx="12.6" cy="-8.2" r="1.7" fill="#e8962e"/>
+  <circle cx="22.2" cy="18.5" r="1.7" fill="#e8962e"/>
+  <circle cx="23.1" cy="12.2" r="1.7" fill="#e8962e"/>
+  <circle cx="22.4" cy="9.9" r="1.7" fill="#e8962e"/>
+  <circle cx="10.5" cy="2.1" r="1.7" fill="#e8962e"/>
+  <circle cx="13.1" cy="-15.0" r="1.7" fill="#e8962e"/>
+  <circle cx="6.6" cy="-6.2" r="1.7" fill="#e8962e"/>
+  <circle cx="11.2" cy="8.2" r="1.7" fill="#e8962e"/>
+  <circle cx="25.1" cy="-0.3" r="1.7" fill="#e8962e"/>
+  <circle cx="24.7" cy="18.6" r="1.7" fill="#e8962e"/>
+  <circle cx="25.1" cy="-3.2" r="1.7" fill="#e8962e"/>
+  <circle cx="10.4" cy="-8.1" r="1.7" fill="#e8962e"/>
+  <circle cx="9.9" cy="-8.8" r="1.7" fill="#e8962e"/>
+  <circle cx="18.5" cy="15.5" r="1.7" fill="#e8962e"/></svg><div><span>Step 2 of 5</span><b>Classify</b></div></div><img src="img/lidar-card.jpg" alt="Classified LiDAR point cloud of La Goccia: vegetation, buildings, ground" loading="lazy"></div>
+        <div class="body">
+          <p class="tagline">Visiting research · Université libre de Bruxelles · 2024–25</p>
+          <h3>Millions of LiDAR points labeled with machine learning, ready for city simulations</h3>
+          <p class="problem"><b>How:</b> six months in Brussels building a point-cloud classifier, now used in the Milan workflow, and fine-tuning RandLA-Net on GPU.</p>
+          <!-- numbers hidden for now (2026-11-22)
+          <div class="numbers">
+            <div><b>2</b><span>LiDAR surveys (2022, 2024)</span></div>
+            <div><b>6</b><span>point classes</span></div>
+            <div><b>1,259</b><span>buildings reconstructed</span></div>
+          </div>
+          -->
+          <div class="tags"><span class="tag">Python</span><span class="tag">Random Forest</span><span class="tag">RandLA-Net</span><span class="tag">GPU</span></div>
+          <span class="more">Read the case study →</span>
+        </div>
+      </a>
+
+      <a class="card" href="projects/cutmesh.html">
+        <div class="thumb" style="background:#d0ccc3"><div class="wf-badge"><svg viewBox="-34 -32 68 64" width="46" height="44" aria-hidden="true"><rect x="-28" y="-28" width="56" height="56" fill="none" stroke="var(--muted)" stroke-opacity=".7" stroke-width="1"/>
+  <path d="M-14 -28 V28 M-28 -14 H28" stroke="var(--muted)" stroke-opacity=".7" stroke-width="1"/>
+  <path d="M0 -28 V28 M-28 0 H28" stroke="var(--muted)" stroke-opacity=".7" stroke-width="1"/>
+  <path d="M14 -28 V28 M-28 14 H28" stroke="var(--muted)" stroke-opacity=".7" stroke-width="1"/>
+  <path d="M-7.0 -14 V0 M-14 -7.0 H0" stroke="var(--accent-2)" stroke-width=".8"/>
+  <path d="M-7.0 0 V14 M-14 7.0 H0" stroke="var(--accent-2)" stroke-width=".8"/>
+  <path d="M-7.0 14 V28 M-14 21.0 H0" stroke="var(--accent-2)" stroke-width=".8"/>
+  <path d="M7.0 -14 V0 M0 -7.0 H14" stroke="var(--accent-2)" stroke-width=".8"/>
+  <path d="M7.0 0 V14 M0 7.0 H14" stroke="var(--accent-2)" stroke-width=".8"/>
+  <path d="M7.0 14 V28 M0 21.0 H14" stroke="var(--accent-2)" stroke-width=".8"/>
+  <rect x="-7" y="0" width="14" height="28" fill="var(--accent)"/></svg><div><span>Step 4 of 5</span><b>Mesh</b></div></div><img src="img/cutmesh.jpg" style="object-fit:contain" alt="Cut-cell mesh generated by cutMesh around a group of buildings, plan view" loading="lazy"></div>
+        <div class="body">
+          <p class="tagline">Ph.D. · Research software in C++ · 2022–26</p>
+          <h3>Any closed shape meshed automatically, from just an STL file and one point</h3>
+          <p class="problem"><b>How:</b> cutMesh, a cut-cell meshing library I designed and wrote in C++ on top of OpenFOAM, with test programs and Doxygen documentation.</p>
+          <!-- numbers hidden for now (2026-11-22)
+          <div class="numbers">
+            <div><b>14k</b><span>lines of C++</span></div>
+            <div><b>4</b><span>libraries on top of OpenFOAM</span></div>
+            <div><b>9</b><span>benchmark geometries, up to 1.1M triangles</span></div>
+          </div>
+          -->
+          <div class="tags"><span class="tag">C++</span><span class="tag">Computational geometry</span><span class="tag">OpenFOAM</span></div>
+          <span class="more">Read the case study →</span>
+        </div>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ======================= CAPABILITIES ======================= -->
+<!-- What I can do, each area backed by links to the projects that prove it.
+     Replaces the Toolbox: the tools now sit under the capability they serve. -->
+<section id="capabilities" class="alt">
+  <div class="wrap">
+    <h2>Specialties</h2>
+    <p class="section-title">What I bring to a team</p>
+    <div class="caps">
+      <div class="cap">
+        <h3>Scientific software &amp; meshing</h3>
+        <p>Research codes and automation in C++ and Python, built to be tested, documented and reused, from raw geometry or scans to simulation-ready meshes.</p>
+        <p class="proof"><a href="projects/cutmesh.html">cutMesh</a><a href="projects/lidar-cfd.html">LiDAR to CFD</a></p>
+        <div class="tags"><span class="tag">C++</span><span class="tag">Python</span><span class="tag">Git</span><span class="tag">Cut-cell / IBM</span><span class="tag">snappyHexMesh</span><span class="tag">CGAL</span></div>
+      </div>
+      <div class="cap">
+        <h3>Simulation &amp; validation</h3>
+        <p>Turbulent flow and heat-transfer simulations, checked against real measurements.</p>
+        <p class="proof"><a href="projects/wind.html">Urban wind</a></p>
+        <div class="tags"><span class="tag">OpenFOAM</span><span class="tag">ANSYS Fluent</span><span class="tag">RANS</span><span class="tag">Finite volume</span><span class="tag">ParaView</span></div>
+      </div>
+      <div class="cap">
+        <h3>HPC &amp; parallel computing</h3>
+        <p>Large parallel CFD runs on Linux clusters with MPI, such as a 38.8M-cell wind model on 80 cores.</p>
+        <p class="proof"><a href="projects/wind.html">Urban wind</a></p>
+        <div class="tags"><span class="tag">MPI</span><span class="tag">Linux</span><span class="tag">Apptainer</span></div>
+      </div>
+      <div class="cap">
+        <h3>Data &amp; machine learning</h3>
+        <p>Point-cloud processing and classification feeding simulation workflows.</p>
+        <p class="proof"><a href="projects/pointclouds.html">Point-cloud classification</a></p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">NumPy / Pandas</span><span class="tag">Random Forest</span><span class="tag">RandLA-Net</span><span class="tag">PyTorch</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= ABOUT ======================= -->
+<section id="about">
+  <div class="wrap">
+    <h2>About</h2>
+    <p class="section-title">From aircraft to cities, and beyond</p>
+    <div class="about">
+      <div>
+        <p>
+          I'm Italian and studied aerospace engineering at Politecnico di Milano, then earned my Ph.D.
+          there in Energy and Nuclear Science and Technology, with the Department of Aerospace Science
+          and Technology. Aircraft taught me the fundamentals: fluid dynamics, numerical methods and
+          a healthy respect for validation. I have worked in CFD for 5+ years, since my M.S. thesis.
+        </p>
+        <p>
+          During my Ph.D. I applied those tools to the wind, heat and comfort of real urban districts,
+          building the whole workflow myself: classifying LiDAR point clouds, rebuilding 1,259 buildings
+          in 3D, meshing them and running large OpenFOAM simulations on a cluster, which matched the
+          measured mean wind speed within about 5%. Where tools were missing, I wrote them, like cutMesh,
+          a cut-cell library that meshes any closed shape automatically.
+        </p>
+        <p>
+          As a visiting researcher at the Université libre de Bruxelles, I built the point-cloud
+          classifier now used in the Milan workflow and fine-tuned the RandLA-Net network on GPU.
+        </p>
+        <p>
+          None of this is specific to cities: turbulence, heat transfer, meshing of complex geometry,
+          validation and parallel computing are what energy, aerospace and process engineering rely on.
+          That's where I want to apply them next.
+        </p>
+        <p>Today I live in Houston.</p>
+      </div>
+      <ul class="facts">
+        <li><span class="ico">🎓</span><div><b>Ph.D. in Energy and Nuclear Science and Technology</b><span>Politecnico di Milano: Italy's largest technical university, 14th in the world for Mechanical, Aeronautical &amp; Manufacturing Engineering (QS 2026)<sup class="cite"><a href="#ref-2">2</a></sup></span></div></li>
+        <li><span class="ico">✈️</span><div><b>M.S. Aeronautical · B.S. Aerospace</b><span>Politecnico di Milano</span></div></li>
+        <li><span class="ico">🇧🇪</span><div><b>Visiting Researcher</b><span>Université libre de Bruxelles, 2024–25 · machine learning on LiDAR point clouds</span></div></li>
+        <li><span class="ico">📍</span><div><b>Houston, Texas</b><span>Authorized to work in the U.S.</span></div></li>
+        <li><span class="ico">💬</span><div><b>Italian · English · Portuguese</b><span>native · fluent · fluent</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= JOURNEY ======================= -->
+<!-- Compact history, newest first; each role links to its projects -->
+<section id="journey" class="alt">
+  <div class="wrap">
+    <h2>Journey</h2>
+    <p class="section-title">Experience &amp; education</p>
+    <ul class="jlist">
+      <!-- HPC contract hidden for now (2026-11-22)
+      <li>
+        <span class="when">Jul 2026 – Oct 2026</span>
+        <div><h3>HPC Systems Administrator (Contract)</h3><p class="where">Politecnico di Milano · Remote</p></div>
+      </li>
+      -->
+      <li>
+        <span class="when">Nov 2022 – Sep 2026</span>
+        <div><h3>Doctoral Researcher</h3><p class="where">Politecnico di Milano · Milan, Italy</p>
+        <p class="links"><a href="projects/wind.html">→ Urban wind</a> · <a href="projects/lidar-cfd.html">LiDAR to CFD</a> · <a href="projects/cutmesh.html">cutMesh</a></p></div>
+      </li>
+      <li>
+        <span class="when">Oct 2024 – Mar 2025</span>
+        <div><h3>Visiting Researcher</h3><p class="where">Université libre de Bruxelles · Brussels, Belgium</p>
+        <p class="links"><a href="projects/pointclouds.html">→ Point-cloud classification</a></p></div>
+      </li>
+      <li>
+        <span class="when">Oct 2020 – Jun 2021</span>
+        <div><h3>Teacher</h3><p class="where">Francesco Baracca Aeronautical Technical Institute · Pavia, Italy</p></div>
+      </li>
+      <li>
+        <span class="when">2018 – 2026</span>
+        <div><h3>Ph.D. (2026) · M.S. (2022) · B.S. (2018)</h3><p class="where">Politecnico di Milano · Energy and Nuclear Science and Technology · Aeronautical · Aerospace Engineering</p></div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ======================= TALKS ======================= -->
+<!-- Talks, posts, papers: newest first -->
+<section id="talks">
+  <div class="wrap">
+    <h2>Presentations</h2>
+    <p class="section-title">Talks and publications</p>
+    <ul class="talks">
+      <li><span class="yr">2025</span><div><b>Polyhedral Cell Decomposition Applied on Structured Cartesian Grids for Fluid Dynamics</b><span class="kind">Oral presentation · 20th OpenFOAM Workshop, Vienna</span></div></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ======================= CONTACT ======================= -->
+<section id="contact" class="alt contact">
+  <picture>
+    <source srcset="img/cutcell-band-dark.svg" media="(prefers-color-scheme: dark)">
+    <img class="band band-left" src="img/cutcell-band.svg" alt="">
+  </picture>
+  <div class="band-h band-h-top" aria-hidden="true"></div>
+  <div class="wrap">
+    <h2>Contact</h2>
+    <p class="section-title">Let's talk</p>
+    <p>
+      I'm looking for Computational Scientist, CFD and scientific software roles.
+      If you're working on simulation or scientific software, I'd be glad to hear from you.
+    </p>
+    <div class="buttons">
+      <a class="btn primary" data-goatcounter-click="email" href="mailto:rsignoriello@outlook.com">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v14H3V5zm9 7.5L5 7.3V17h14V7.3l-7 5.2zM5.9 7l6.1 4.5L18.1 7H5.9z"/></svg>
+        rsignoriello@outlook.com
+      </a>
+      <a class="btn" data-goatcounter-click="book-call" href="https://cal.com/rsignoriello" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h2v2h6V2h2v2h3v18H4V4h3V2zm11 8H6v10h12V10z"/></svg>
+        Book a call
+      </a>
+      <a class="btn" data-goatcounter-click="linkedin-contact" href="https://www.linkedin.com/in/rsignoriello" target="_blank" rel="noopener">LinkedIn</a>
+      <!-- <a class="btn" data-goatcounter-click="github" href="https://github.com/rsignoriello" target="_blank" rel="noopener">GitHub</a> -->
+      <a class="btn" data-goatcounter-click="resume-download-contact" href="https://1drv.ms/b/c/a7333cfdc3301dc4/IQABKrg-Tx84Q465GuaP1Ry7AYAypZ0C0ugnFOhXBMoLWoY?download=1" data-resume target="_blank" rel="noopener">Resume (PDF)</a>
+    </div>
+  </div>
+</section>
+
+<section id="sources" class="sources">
+  <div class="wrap">
+    <details id="sources-list">
+    <summary><h2>Sources</h2></summary>
+    <ol>
+      <li id="ref-1">J. P. Slotnick, A. Khodadoust, J. Alonso, D. Darmofal, W. Gropp, E. Lurie, D. Mavriplis,
+        <a href="https://ntrs.nasa.gov/citations/20140003093" target="_blank" rel="noopener"><em>CFD Vision 2030 Study: A Path to Revolutionary Computational Aerosciences</em></a>,
+        NASA/CR-2014-218178, 2014. <a href="#cite-1" aria-label="Back to text">↩</a></li>
+      <li id="ref-2">Politecnico di Milano,
+        <a href="https://www.dig.polimi.it/en/magazine/qs-world-university-rankings-by-subject-polimi-among-the-worlds-top-universities" target="_blank" rel="noopener"><em>QS World University Rankings by Subject 2026</em></a>.</li>
+    </ol>
+    </details>
+  </div>
+</section>
+
+<footer>© 2026 Ruggiero Signoriello · Houston, Texas</footer>
+
+<script>
+  // Light/dark toggle, same as index.html
+  (function () {
+    var root = document.documentElement, mq = matchMedia("(prefers-color-scheme: dark)");
+    function isDark() { return root.dataset.theme ? root.dataset.theme === "dark" : mq.matches; }
+    function syncBands() {
+      document.querySelectorAll('source[srcset$="-dark.svg"]').forEach(function (src) {
+        src.media = root.dataset.theme ? (root.dataset.theme === "dark" ? "all" : "not all")
+                                       : "(prefers-color-scheme: dark)";
+      });
+    }
+    document.querySelector(".theme-toggle").addEventListener("click", function () {
+      root.dataset.theme = isDark() ? "light" : "dark";
+      try { localStorage.setItem("theme", root.dataset.theme); } catch (e) {}
+      syncBands();
+    });
+    syncBands();
+  })();
+  // footnote marks (#ref-N) open the collapsed Sources list before jumping to it
+  (function () {
+    var list = document.getElementById("sources-list");
+    function openFor(hash) { if (/^#ref-/.test(hash)) list.open = true; }
+    document.querySelectorAll('a[href^="#ref-"]').forEach(function (a) {
+      a.addEventListener("click", function () { openFor(a.getAttribute("href")); });
+    });
+    openFor(location.hash);
+  })();
+</script>
+<script>
+  // Resume con telefono per chi arriva da un contatto diretto: biglietto, immagine,
+  // CV inviati, firma email, Wallet (?ref=card|image|cv|email|wallet). Ricordato nel
+  // browser per le visite successive. Tutti gli altri (ricerca, LinkedIn, cv-public)
+  // vedono il CV pubblico. Il link non e' in chiaro per tenerlo lontano dai crawler.
+  // Schema completo dei ref: CV/branding/README.md
+  (function () {
+    var direct = ["card", "image", "cv", "email", "wallet"];
+    var ref = new URLSearchParams(location.search).get("ref");
+    var isDirect = direct.indexOf(ref) !== -1;
+    try {
+      if (isDirect) localStorage.setItem("rs-direct", "1");
+      else isDirect = localStorage.getItem("rs-direct") === "1";
+    } catch (e) {}
+    if (!isDirect) return;
+    var url = "https://1drv.ms/b/c/a7333cfdc3301dc4/" + atob("SVFEc1BQc0U5Zl96UnE5VjdNM3ZkbGwtQWQycU9tUzRwQlhWY0ljbkU4bFkzMGc=") + "?download=1";
+    document.querySelectorAll("a[data-resume]").forEach(function (a) { a.href = url; });
+  })();
+</script>
+<script data-goatcounter="https://rsignoriello.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+</body>
+</html>
