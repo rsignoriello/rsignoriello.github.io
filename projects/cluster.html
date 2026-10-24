@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noai, noimageai">
+<title>Cluster architecture · Ruggiero Signoriello, Ph.D.</title>
+<meta name="description" content="A research cluster redesigned to be secure by default, for 800+ researchers. I redesigned the access architecture of a university cluster shared by hundreds of researchers, replacing legacy, unencrypted identity management and terminal-only access.">
+<meta property="og:title" content="Cluster architecture · Ruggiero Signoriello, Ph.D.">
+<meta property="og:description" content="A research cluster redesigned to be secure by default, for 800+ researchers. I redesigned the access architecture of a university cluster shared by hundreds of researchers, replacing legacy, unencrypted identity management and terminal-only access.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ruggiero.signoriello.dev/projects/cluster.html">
+<meta property="og:image" content="https://ruggiero.signoriello.dev/img/city.jpg">
+<link rel="canonical" href="https://ruggiero.signoriello.dev/projects/cluster.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231F4E79'/%3E%3Ctext x='32' y='42' font-family='Helvetica,Arial,sans-serif' font-size='28' font-weight='700' fill='white' text-anchor='middle'%3ERS%3C/text%3E%3C/svg%3E">
+<script>
+  // apply the saved theme before the page is drawn (no flash of the wrong theme)
+  try { var t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
+<link rel="preload" href="../fonts/IBMPlexSans-Regular-Latin1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="../">R. Signoriello, PhD</a>
+    <a href="../#work">Work</a>
+    <a href="../#capabilities">Capabilities</a>
+    <a href="../#journey">Journey</a>
+    <a href="../#talks">Talks</a>
+    <a href="../#contact">Contact</a>
+    <button class="theme-toggle" type="button" aria-label="Switch light/dark theme" title="Light / dark theme">
+      <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7a5 5 0 110 10 5 5 0 010-10zm0-5h0a1 1 0 011 1v2a1 1 0 01-2 0V3a1 1 0 011-1zm0 17a1 1 0 011 1v1a1 1 0 01-2 0v-1a1 1 0 011-1zM3 11h2a1 1 0 010 2H3a1 1 0 010-2zm16 0h2a1 1 0 010 2h-2a1 1 0 010-2zM5.6 4.2l1.4 1.4a1 1 0 01-1.4 1.4L4.2 5.6a1 1 0 011.4-1.4zm12.8 12.8l1.4 1.4a1 1 0 01-1.4 1.4l-1.4-1.4a1 1 0 011.4-1.4zM4.2 18.4l1.4-1.4a1 1 0 011.4 1.4l-1.4 1.4a1 1 0 01-1.4-1.4zM17 5.6l1.4-1.4a1 1 0 011.4 1.4L18.4 7A1 1 0 0117 5.6z"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- Same structure for every project page: impact first, then problem, what I did, result.
+     Order of the pages = newest first, as on the homepage (Newer / Older links at the bottom). -->
+<div class="case-head">
+  <div class="wrap">
+    <p class="crumb"><a href="../#work">← All work</a></p>
+    <p class="tagline">Current role · Politecnico di Milano · 2026–</p>
+    <h1>A research cluster redesigned to be secure by default, for 800+ researchers</h1>
+    <p class="problem">I redesigned the access architecture of a university cluster shared by hundreds of researchers, replacing legacy, unencrypted identity management and terminal-only access.</p>
+    <div class="numbers">
+      <div><b>800+</b><span>accounts migrated</span></div>
+      <div><b>2FA</b><span>on external access</span></div>
+      <div><b>100%</b><span>access config in Ansible</span></div>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap case">
+    <div>
+      <p class="label">The problem</p>
+      <p>
+        A university cluster shared by hundreds of researchers still relied on NIS, a legacy
+        protocol that sends identity data unencrypted, and on terminal-only access.
+      </p>
+      <p class="label">What I did</p>
+      <p>
+        I redesigned how people and services reach the cluster. Admin services moved to an
+        isolated node reachable only with SSH keys. All user accounts moved from NIS to a 389-DS LDAP directory,
+        with SSSD on every node. External access now requires two-factor authentication under a single password
+        policy, and Open OnDemand with single sign-on gives researchers a way in from a web browser.
+      </p>
+      <p class="label">Result</p>
+      <p>
+        Centralized, encrypted login on every node; admin services separated from user access;
+        and a browser-based way in for researchers who don't use a terminal. Every access setting lives in
+        Ansible playbooks, so every change is tracked and any node can be rebuilt to a known, audited state.
+      </p>
+      <div class="tags"><span class="tag">RHEL</span><span class="tag">LDAP / SSSD</span><span class="tag">Ansible</span><span class="tag">Open OnDemand</span><span class="tag">OIDC</span><span class="tag">Security</span></div>
+    </div>
+    <div class="media">
+        <div class="diagram" role="img" aria-label="Cluster access architecture: researchers log in through Open OnDemand with single sign-on or SSH with two-factor authentication, an isolated admin node, LDAP directory and Ansible-managed compute nodes">
+          <svg viewBox="0 0 460 300">
+            <rect class="box" x="10" y="20" width="130" height="44" rx="8"/>
+            <text x="75" y="47" text-anchor="middle">Researchers</text>
+            <rect class="box" x="170" y="10" width="130" height="30" rx="6"/>
+            <text x="235" y="30" text-anchor="middle">Open OnDemand</text>
+            <rect class="box" x="170" y="46" width="130" height="30" rx="6"/>
+            <text x="235" y="66" text-anchor="middle">SSH + 2FA</text>
+            <path class="wire" d="M140 42 H170 M155 42 V25 H170 M155 42 V61 H170"/>
+            <text class="t-mut" x="235" y="92" text-anchor="middle">OIDC single sign-on</text>
+            <rect class="box strong" x="320" y="18" width="130" height="50" rx="8"/>
+            <text class="t-on" x="385" y="40" text-anchor="middle">Login node</text>
+            <text class="t-on" x="385" y="56" text-anchor="middle" style="font-weight:400;font-size:11px">SSSD</text>
+            <path class="wire" d="M300 25 H310 V43 H320 M300 61 H310 V43"/>
+            <rect class="box" x="320" y="120" width="130" height="44" rx="8"/>
+            <text x="385" y="140" text-anchor="middle">389-DS LDAP</text>
+            <text class="t-mut" x="385" y="155" text-anchor="middle">800+ accounts</text>
+            <path class="wire" d="M385 68 V120"/>
+            <rect class="box" x="10" y="120" width="160" height="44" rx="8"/>
+            <text x="90" y="140" text-anchor="middle">Admin node</text>
+            <text class="t-mut" x="90" y="155" text-anchor="middle">isolated, key-only</text>
+            <rect class="box" x="170" y="220" width="280" height="56" rx="8"/>
+            <text x="310" y="244" text-anchor="middle">Compute nodes</text>
+            <text class="t-mut" x="310" y="262" text-anchor="middle">MPI · Apptainer</text>
+            <path class="wire" d="M385 164 V220"/>
+            <rect class="box" x="10" y="220" width="130" height="56" rx="8"/>
+            <text x="75" y="244" text-anchor="middle">Ansible</text>
+            <text class="t-mut" x="75" y="262" text-anchor="middle">versioned config</text>
+            <path class="wire" d="M90 164 V220 M140 248 H170"/>
+          </svg>
+        </div>
+    </div>
+  </div>
+</section>
+
+<section class="case-pager">
+  <div class="wrap case-next">
+    <a href="../#work">← All work</a>
+    <a href="wind.html">Older: Milan planners can see how wind moves through a district before redeveloping it →</a>
+  </div>
+</section>
+
+<footer>© 2026 Ruggiero Signoriello · Houston, Texas</footer>
+
+<script>
+  // light/dark toggle (no header bands on these pages); footnote marks open the Sources list
+  (function () {
+    var root = document.documentElement, mq = matchMedia("(prefers-color-scheme: dark)");
+    function isDark() { return root.dataset.theme ? root.dataset.theme === "dark" : mq.matches; }
+    document.querySelector(".theme-toggle").addEventListener("click", function () {
+      root.dataset.theme = isDark() ? "light" : "dark";
+      try { localStorage.setItem("theme", root.dataset.theme); } catch (e) {}
+    });
+    var list = document.getElementById("sources-list");
+    if (list) {
+      document.querySelectorAll('a[href^="#ref-"]').forEach(function (a) {
+        a.addEventListener("click", function () { list.open = true; });
+      });
+    }
+  })();
+</script>
+<script data-goatcounter="https://rsignoriello.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

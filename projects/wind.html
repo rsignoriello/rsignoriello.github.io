@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noai, noimageai">
+<title>LiDAR to wind · Ruggiero Signoriello, Ph.D.</title>
+<meta name="description" content="Milan planners can see how wind moves through a district before redeveloping it. An end-to-end workflow, designed and run by me, that turns raw LiDAR scans of a Milan district into wind simulations validated against on-site measurements.">
+<meta property="og:title" content="LiDAR to wind · Ruggiero Signoriello, Ph.D.">
+<meta property="og:description" content="Milan planners can see how wind moves through a district before redeveloping it. An end-to-end workflow, designed and run by me, that turns raw LiDAR scans of a Milan district into wind simulations validated against on-site measurements.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ruggiero.signoriello.dev/projects/wind.html">
+<meta property="og:image" content="https://ruggiero.signoriello.dev/img/city.jpg">
+<link rel="canonical" href="https://ruggiero.signoriello.dev/projects/wind.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231F4E79'/%3E%3Ctext x='32' y='42' font-family='Helvetica,Arial,sans-serif' font-size='28' font-weight='700' fill='white' text-anchor='middle'%3ERS%3C/text%3E%3C/svg%3E">
+<script>
+  // apply the saved theme before the page is drawn (no flash of the wrong theme)
+  try { var t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
+<link rel="preload" href="../fonts/IBMPlexSans-Regular-Latin1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="../">R. Signoriello, PhD</a>
+    <a href="../#work">Work</a>
+    <a href="../#capabilities">Capabilities</a>
+    <a href="../#journey">Journey</a>
+    <a href="../#talks">Talks</a>
+    <a href="../#contact">Contact</a>
+    <button class="theme-toggle" type="button" aria-label="Switch light/dark theme" title="Light / dark theme">
+      <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7a5 5 0 110 10 5 5 0 010-10zm0-5h0a1 1 0 011 1v2a1 1 0 01-2 0V3a1 1 0 011-1zm0 17a1 1 0 011 1v1a1 1 0 01-2 0v-1a1 1 0 011-1zM3 11h2a1 1 0 010 2H3a1 1 0 010-2zm16 0h2a1 1 0 010 2h-2a1 1 0 010-2zM5.6 4.2l1.4 1.4a1 1 0 01-1.4 1.4L4.2 5.6a1 1 0 011.4-1.4zm12.8 12.8l1.4 1.4a1 1 0 01-1.4 1.4l-1.4-1.4a1 1 0 011.4-1.4zM4.2 18.4l1.4-1.4a1 1 0 011.4 1.4l-1.4 1.4a1 1 0 01-1.4-1.4zM17 5.6l1.4-1.4a1 1 0 011.4 1.4L18.4 7A1 1 0 0117 5.6z"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- Same structure for every project page: impact first, then problem, what I did, result.
+     Order of the pages = newest first, as on the homepage (Newer / Older links at the bottom). -->
+<div class="case-head">
+  <div class="wrap">
+    <p class="crumb"><a href="../#work">← All work</a></p>
+    <p class="tagline">Ph.D. · Project for the City of Milan · 2022–26</p>
+    <h1>Milan planners can see how wind moves through a district before redeveloping it</h1>
+    <p class="problem">An end-to-end workflow, designed and run by me, that turns raw LiDAR scans of a Milan district into wind simulations validated against on-site measurements.</p>
+    <div class="numbers">
+      <div><b>38.8M</b><span>mesh cells</span></div>
+      <div><b>80</b><span>CPU cores (MPI)</span></div>
+      <div><b>−0.09 m/s</b><span>bias on mean wind speed</span></div>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap case">
+    <div>
+      <p class="label">The problem</p>
+      <p>
+        La Goccia is a 0.46 km² urban woodland in north Milan, next to the Politecnico campus and
+        about to be redeveloped. Planners wanted to know how wind moves through it today, but
+        turning a real neighborhood into a simulation-ready model is usually slow, manual work.
+      </p>
+      <p class="label">What I built</p>
+      <p>
+        An end-to-end workflow, designed and run by me from raw data to the final simulation. LiDAR point
+        clouds from 2022 and 2024 are cleaned and classified into ground, vegetation and buildings with a model
+        trained on my own data; open-source tools then rebuild a watertight 3D model of 1,259 buildings,
+        156 of them at high detail. The model is meshed and simulated in OpenFOAM (steady RANS, k–ε) with an
+        atmospheric boundary layer derived from Linate airport wind data. cutMesh was developed and tested
+        separately; integrating it into this workflow is ongoing.
+      </p>
+      <p class="label">Result</p>
+      <p>
+        Compared with 740 ten-minute samples from an on-site anemometer at 48 m (Jan 2024 – Aug 2025),
+        the simulated mean wind speed is about 5% below the measured one: 1.60 vs. 1.69 m/s, a bias of −0.09 m/s.
+        The workflow was then extended to a multi-region RANS thermal-comfort analysis of the district.
+      </p>
+      <p class="note">
+        The RMSE of 1.26 m/s reflects gust-to-gust variability: a steady RANS model predicts the mean
+        flow, not the fluctuations, which would require unsteady approaches such as URANS or LES.
+      </p>
+      <div class="tags"><span class="tag">OpenFOAM</span><span class="tag">RANS k–ε</span><span class="tag">CloudCompare</span><span class="tag">MPI</span><span class="tag">ParaView</span></div>
+    </div>
+    <div class="media">
+        <figure>
+          <img src="../img/city.jpg" alt="3D urban model of La Goccia park in Milan with ground, trees and buildings reconstructed from LiDAR" loading="lazy">
+          <figcaption>La Goccia, Milan: ground, tree canopies and buildings reconstructed from LiDAR</figcaption>
+        </figure>
+        <figure>
+          <img src="../img/wind.jpg" alt="Wind speed fields around buildings: top, front and side views, with and without the mesh" loading="lazy">
+          <figcaption>Wind speed at the anemometer plane: top, front and side views, with the mesh below</figcaption>
+        </figure>
+        <figure>
+          <img src="../img/mesh.jpg" alt="Cylindrical computational domain of the Milan district with buildings on the ground" loading="lazy">
+          <figcaption>Computational domain: 2.28 km radius, 570 m high, wind from 240°</figcaption>
+        </figure>
+    </div>
+  </div>
+</section>
+
+<section class="case-pager">
+  <div class="wrap case-next">
+    <a href="cluster.html">← Newer: A research cluster redesigned to be secure by default, for 800+ researchers</a>
+    <a href="cutmesh.html">Older: Any closed shape meshed automatically, from just an STL file and one point →</a>
+  </div>
+</section>
+
+<footer>© 2026 Ruggiero Signoriello · Houston, Texas</footer>
+
+<script>
+  // light/dark toggle (no header bands on these pages); footnote marks open the Sources list
+  (function () {
+    var root = document.documentElement, mq = matchMedia("(prefers-color-scheme: dark)");
+    function isDark() { return root.dataset.theme ? root.dataset.theme === "dark" : mq.matches; }
+    document.querySelector(".theme-toggle").addEventListener("click", function () {
+      root.dataset.theme = isDark() ? "light" : "dark";
+      try { localStorage.setItem("theme", root.dataset.theme); } catch (e) {}
+    });
+    var list = document.getElementById("sources-list");
+    if (list) {
+      document.querySelectorAll('a[href^="#ref-"]').forEach(function (a) {
+        a.addEventListener("click", function () { list.open = true; });
+      });
+    }
+  })();
+</script>
+<script data-goatcounter="https://rsignoriello.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
